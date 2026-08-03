@@ -91,7 +91,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero { position: relative; min-height: 88vh; display: flex; align-items: center; overflow: hidden; }
 .hero-media {
   position: absolute; inset: 0;
-  background: #1a1a1a url('assets/hero/hero-kitchen.jpg') center 30%/cover no-repeat;
+  background: #1a1a1a url('assets/hero/hero-kitchen.webp') center 30%/cover no-repeat;
 }
 .hero-scrim {
   position: absolute; inset: 0;
@@ -114,6 +114,19 @@ ul { margin: 0; padding: 0; list-style: none; }
 .about-inner { max-width: 640px; }
 .about h2 { font-size: clamp(1.7rem, 2vw + 1rem, 2.3rem); }
 .about p { font-size: 17px; }
+
+/* Trust strip (Canadian-made, warranty, etc.) */
+.trust-strip { background: var(--ink); padding: 20px 0; }
+.trust-strip-inner { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; text-align: center; }
+.trust-badge { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: #fff; background: rgba(255,255,255,0.12); padding: 8px 16px; border-radius: 999px; white-space: nowrap; }
+
+/* Process ("How It Works") */
+.process { padding: 100px 0; background: var(--paper-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.process h2 { font-size: clamp(1.7rem, 2vw + 1rem, 2.3rem); margin-bottom: 44px; }
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.process-num { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); display: block; margin-bottom: 14px; }
+.process-step h3 { font-family: var(--serif); font-weight: 600; font-size: 19px; margin-bottom: 8px; color: var(--ink); }
+.process-step p { font-size: 14.5px; margin: 0; }
 
 /* Work / gallery */
 .work { padding: 100px 0; background: var(--paper-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -209,6 +222,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 .footer-ig { color: var(--ink); display: flex; }
 .footer-ig:hover { color: var(--ink-faint); }
 
+/* Sticky mobile call/quote bar */
+.mobile-cta { display: none; }
+@media (max-width: 700px) {
+  .mobile-cta {
+    display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    border-top: 1px solid var(--line); background: #fff;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  .mobile-cta a { flex: 1; text-align: center; padding: 15px 0; font-weight: 600; font-size: 14px; }
+  .mobile-cta-call { background: var(--ink); color: #fff; }
+  .mobile-cta-quote { background: #fff; color: var(--ink); border-left: 1px solid var(--line); }
+  .site-footer { padding-bottom: 78px; }
+}
+
 /* Responsive */
 @media (max-width: 1080px) {
   .main-nav {
@@ -225,6 +252,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   .contact-inner { grid-template-columns: 1fr; }
   .testimonial-grid { grid-template-columns: 1fr; }
   .service-grid-2 { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .process-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .btn-call { display: none; }
