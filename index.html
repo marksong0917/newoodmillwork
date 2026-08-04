@@ -19,7 +19,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/hero/hero-kitchen.webp" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 
@@ -92,8 +92,7 @@
 
 <section class="trust-strip reveal">
   <div class="wrap trust-strip-inner">
-    <span class="trust-badge">&#127809; MADE IN CANADA</span>
-    <span class="trust-badge">PROUDLY CANADIAN OWNED &amp; OPERATED</span>
+    <span class="trust-badge">&#127809; MADE IN CANADA &mdash; PROUDLY CANADIAN OWNED &amp; OPERATED</span>
     <span class="trust-badge">LIFETIME WORKMANSHIP WARRANTY</span>
   </div>
 </section>
@@ -101,7 +100,7 @@
 <section id="about" class="about reveal">
   <div class="wrap about-inner">
     <p class="eyebrow">ABOUT</p>
-    <h2>Built to the room, not the shelf.</h2>
+    <h2>Custom cabinetry, built around your space.</h2>
     <p>NEWOOD MILLWORK INC is a Canadian-owned and operated company that designs and builds custom cabinetry, closets, and commercial millwork out of our shop in Concord, Ontario. Every piece is measured, cut, and installed to fit the space it's built for. We work with homeowners, contractors, and commercial clients on projects of any size, from a single closet to a full storefront fit-out.</p>
   </div>
 </section>
@@ -184,24 +183,67 @@
 </section>
 
 <section id="contact" class="contact reveal">
-  <div class="wrap contact-inner">
-    <div class="contact-info">
-      <p class="eyebrow eyebrow-light">CONTACT</p>
-      <h2>Get in touch</h2>
-      <ul class="contact-list">
-        <li><span>Phone</span><a href="tel:19056606696">(905) 660-6696</a></li>
-        <li><span>Email</span><a href="mailto:info@newoodmillwork.com">info@newoodmillwork.com</a></li>
-        <li><span>Address</span><a href="https://www.google.com/maps/search/?api=1&query=450+Bowes+Rd+Unit+7-8,+Concord,+ON+L4K+1K3" target="_blank" rel="noopener">450 Bowes Rd Unit 7-8<br>Concord, Ontario L4K 1K3</a></li>
-      </ul>
-      <a href="tel:19056606696" class="btn-primary">Call Now</a>
-    </div>
-    <div class="contact-map bracket">
-      <iframe
-        title="NEWOOD MILLWORK location"
-        src="https://www.google.com/maps?q=450+Bowes+Rd+Unit+7-8,+Concord,+ON+L4K+1K3&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+  <div class="wrap">
+    <p class="eyebrow eyebrow-light">CONTACT</p>
+    <h2>Get in touch</h2>
+    <p class="contact-lead">Tell us about your project below, or reach us directly. We reply within 24&ndash;48 business hours.</p>
+
+    <div class="contact-grid">
+      <form class="quote-form" id="quoteForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="qName">Name</label>
+            <input type="text" id="qName" name="name" required>
+          </div>
+          <div class="form-field">
+            <label for="qEmail">Email</label>
+            <input type="email" id="qEmail" name="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="qPhone">Phone</label>
+            <input type="tel" id="qPhone" name="phone">
+          </div>
+          <div class="form-field">
+            <label for="qType">Project type</label>
+            <select id="qType" name="type">
+              <option>Kitchen</option>
+              <option>Closet</option>
+              <option>Bathroom Vanity</option>
+              <option>Office</option>
+              <option>Commercial</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="qSize">Approximate size</label>
+          <input type="text" id="qSize" name="size" placeholder="e.g. 10 x 12 ft kitchen, single closet, full store fit-out">
+        </div>
+        <div class="form-field">
+          <label for="qDetails">Project details</label>
+          <textarea id="qDetails" name="details" rows="4" placeholder="Share as much as you can — layout, style, timeline. Have photos of the space? Attach them to the email that opens after you submit."></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Request a Quote</button>
+        <p class="form-note">This opens an email to info@newoodmillwork.com with your details filled in — just attach any photos and hit send.</p>
+      </form>
+
+      <div class="contact-side">
+        <ul class="contact-list-compact">
+          <li><span>Phone</span><a href="tel:19056606696">(905) 660-6696</a></li>
+          <li><span>Email</span><a href="mailto:info@newoodmillwork.com">info@newoodmillwork.com</a></li>
+          <li><span>Address</span><a href="https://www.google.com/maps/search/?api=1&query=450+Bowes+Rd+Unit+7-8,+Concord,+ON+L4K+1K3" target="_blank" rel="noopener">450 Bowes Rd Unit 7-8, Concord, ON L4K 1K3</a></li>
+        </ul>
+        <div class="contact-map bracket">
+          <iframe
+            title="NEWOOD MILLWORK location"
+            src="https://www.google.com/maps?q=450+Bowes+Rd+Unit+7-8,+Concord,+ON+L4K+1K3&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -218,7 +260,7 @@
     </div>
     <div class="footer-inner">
       <span class="footer-mark"><img src="assets/brand/logo-icon.png" alt="" class="footer-mark-icon">NEWOOD MILLWORK</span>
-      <p class="footer-copy">&copy; <span id="year"></span> Newood Millwork Inc. All rights reserved.</p>
+      <p class="footer-copy">&copy; <span id="year"></span> Newood Millwork Inc. All rights reserved. &middot; <a href="warranty.html" class="footer-legal-link">Warranty &amp; Terms</a></p>
       <a class="footer-ig" href="https://www.instagram.com/newoodmillwork/" target="_blank" rel="noopener" aria-label="Newood Millwork on Instagram">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
       </a>
@@ -230,6 +272,11 @@
 <div class="mobile-cta">
   <a href="tel:19056606696" class="mobile-cta-call">Call Now</a>
   <a href="#contact" class="mobile-cta-quote">Get a Quote</a>
+</div>
+<div class="sub-footer">
+  <div class="wrap">
+    <p>Composite wood materials meet TSCA Title VI / CARB Phase 2 formaldehyde emission standards. <a href="warranty.html">Learn more about our materials &amp; warranty</a>.</p>
+  </div>
 </div>
 <script src="script.js"></script>
 </body>
