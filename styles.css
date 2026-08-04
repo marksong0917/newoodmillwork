@@ -250,7 +250,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .footer-ig { color: var(--ink); display: flex; }
 .footer-ig:hover { color: var(--ink-faint); }
 
-.sub-footer { background: var(--paper-soft); border-top: 1px solid var(--line); padding: 16px 0; }
+.sub-footer { background: var(--paper-soft); border-top: 1px solid var(--line); padding: 24px 0 16px; }
+.sub-footer-lead { font-size: 12.5px; font-weight: 600; color: var(--ink-soft); text-align: center; margin: 0 0 14px; }
+.supplier-badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.supplier-badge { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.03em; color: var(--ink); background: #fff; border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px; }
 .sub-footer p { margin: 0; font-size: 12px; color: var(--ink-faint); text-align: center; }
 .sub-footer a { color: var(--ink-faint); text-decoration: underline; }
 .sub-footer a:hover { color: var(--ink); }
