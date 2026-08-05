@@ -45,16 +45,48 @@ if (lightboxTriggers.length) {
     if (e.key === 'ArrowRight') show(current + 1);
   });
 }
-// Quote request form: builds a pre-filled email (no backend needed on a static site)
+// Quote request form: 3-step wizard, builds a pre-filled email (no backend needed on a static site)
 const quoteForm = document.getElementById('quoteForm');
 if (quoteForm) {
+  let currentStep = 1;
+  let selectedType = '';
+  let selectedTimeline = '';
+
+  const steps = quoteForm.querySelectorAll('.form-step');
+  const dots = quoteForm.querySelectorAll('.form-progress-step');
+
+  function goToStep(n) {
+    currentStep = n;
+    steps.forEach(s => s.classList.toggle('active', Number(s.dataset.step) === n));
+    dots.forEach(d => {
+      const dn = Number(d.dataset.stepDot);
+      d.classList.toggle('active', dn === n);
+      d.classList.toggle('done', dn < n);
+    });
+  }
+
+  quoteForm.querySelectorAll('.form-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const step = btn.closest('.form-step');
+      step.querySelectorAll('.form-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const stepNum = Number(step.dataset.step);
+      if (stepNum === 1) selectedType = btn.dataset.value;
+      if (stepNum === 2) selectedTimeline = btn.dataset.value;
+      setTimeout(() => goToStep(stepNum + 1), 200);
+    });
+  });
+
+  quoteForm.querySelectorAll('.form-back').forEach(btn => {
+    btn.addEventListener('click', () => goToStep(Number(btn.dataset.back)));
+  });
+
   quoteForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = document.getElementById('qName').value.trim();
     const email = document.getElementById('qEmail').value.trim();
     const phone = document.getElementById('qPhone').value.trim();
-    const type = document.getElementById('qType').value;
     const size = document.getElementById('qSize').value.trim();
     const details = document.getElementById('qDetails').value.trim();
 
@@ -63,12 +95,13 @@ if (quoteForm) {
       return;
     }
 
-    const subject = `Quote Request: ${type} — ${name}`;
+    const subject = `Quote Request: ${selectedType || 'Project'} — ${name}`;
     const bodyLines = [
       `Name: ${name}`,
       `Email: ${email}`,
       phone ? `Phone: ${phone}` : null,
-      `Project type: ${type}`,
+      `Project type: ${selectedType || 'Not specified'}`,
+      `Timeline: ${selectedTimeline || 'Not specified'}`,
       size ? `Approximate size: ${size}` : null,
       '',
       'Project details:',
@@ -79,6 +112,7 @@ if (quoteForm) {
     window.location.href = mailto;
   });
 }
+
 
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');

@@ -74,13 +74,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .main-nav a:hover { color: var(--ink-faint); }
 .btn-call {
   border: 1px solid var(--ink); font-weight: 600;
-  padding: 9px 16px; border-radius: 2px; font-size: 13px; white-space: nowrap;
+  padding: 13px 18px; border-radius: 2px; font-size: 13px; white-space: nowrap;
   transition: background 0.15s, color 0.15s;
 }
 .btn-call:hover { background: var(--ink); color: #fff; }
 .nav-toggle {
   display: none; background: none; border: none; cursor: pointer;
-  width: 28px; height: 20px; padding: 0; flex-direction: column; justify-content: space-between;
+  width: 44px; height: 44px; padding: 12px 8px; flex-direction: column; justify-content: space-between;
 }
 .nav-toggle span { display: block; height: 2px; background: var(--ink); }
 
@@ -218,6 +218,31 @@ figure.work-item:hover::after, figure.service-photo:hover::after { opacity: 1; }
 
 /* Quote form */
 .quote-form { display: flex; flex-direction: column; gap: 16px; }
+.form-progress { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.form-progress-step {
+  width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 12px; color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.25); flex-shrink: 0; transition: all 0.2s ease;
+}
+.form-progress-step.active { color: var(--ink); background: #fff; border-color: #fff; }
+.form-progress-step.done { color: #fff; background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.4); }
+.form-progress-line { flex: 1; height: 1px; background: rgba(255,255,255,0.2); }
+.form-step { display: none; flex-direction: column; gap: 16px; }
+.form-step.active { display: flex; }
+.form-step-title { font-family: var(--display); font-weight: 600; font-size: 19px; color: #fff; margin: 0; }
+.form-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.form-option {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 2px;
+  color: #fff; font-family: var(--sans); font-size: 15px; padding: 16px 14px; cursor: pointer;
+  text-align: left; transition: border-color 0.15s, background 0.15s;
+}
+.form-option:hover { border-color: rgba(255,255,255,0.5); }
+.form-option.selected { background: #fff; color: var(--ink); border-color: #fff; font-weight: 600; }
+.form-back {
+  align-self: flex-start; background: none; border: none; color: rgba(255,255,255,0.55);
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; cursor: pointer; padding: 4px 0;
+}
+.form-back:hover { color: #fff; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-field { display: flex; flex-direction: column; gap: 6px; }
 .form-field label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
