@@ -1,5 +1,50 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Lightbox for gallery images (figure.work-item and figure.service-photo only —
+// homepage tiles are <a> links to other pages and should keep their normal nav behaviour)
+const lightboxTriggers = document.querySelectorAll('figure.work-item img, figure.service-photo img');
+if (lightboxTriggers.length) {
+  const images = Array.from(lightboxTriggers);
+  let current = 0;
+
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = `
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+    <img src="" alt="">
+    <button class="lightbox-next" aria-label="Next">&#8250;</button>
+  `;
+  document.body.appendChild(lb);
+  const lbImg = lb.querySelector('img');
+
+  function show(i) {
+    current = (i + images.length) % images.length;
+    lbImg.src = images[current].src;
+    lbImg.alt = images[current].alt;
+  }
+  function open(i) {
+    show(i);
+    lb.classList.add('open');
+  }
+  function close() {
+    lb.classList.remove('open');
+  }
+
+  images.forEach((img, i) => {
+    img.addEventListener('click', () => open(i));
+  });
+  lb.querySelector('.lightbox-close').addEventListener('click', close);
+  lb.querySelector('.lightbox-prev').addEventListener('click', () => show(current - 1));
+  lb.querySelector('.lightbox-next').addEventListener('click', () => show(current + 1));
+  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+}
 // Quote request form: builds a pre-filled email (no backend needed on a static site)
 const quoteForm = document.getElementById('quoteForm');
 if (quoteForm) {
