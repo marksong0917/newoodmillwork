@@ -203,12 +203,26 @@ figure.work-item:hover::after, figure.service-photo:hover::after { opacity: 1; }
 .work h2 { font-size: clamp(1.7rem, 2vw + 1rem, 2.3rem); margin-bottom: 40px; }
 .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
 .gallery-grid-flex { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.door-label {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--ink-faint);
+  text-align: center; margin-top: 8px;
+}
 .work-item { margin: 0; padding: 10px; background: var(--paper); overflow: hidden; }
 .work-item img {
   width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
   transition: transform 0.4s ease;
 }
 .work-item:hover img { transform: scale(1.04); }
+.door-item img {
+  aspect-ratio: 2 / 3; object-fit: contain; background: var(--paper-soft);
+}
+.door-jump { display: flex; gap: 10px; flex-wrap: wrap; margin: 4px 0 30px; }
+.door-jump a {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--ink-faint);
+  border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px; transition: all 0.15s;
+}
+.door-jump a:hover { color: var(--ink); border-color: var(--ink-faint); }
+.door-collection-intro { max-width: 660px; font-size: 15px; color: var(--ink-soft); margin-bottom: 28px; line-height: 1.6; }
 
 /* Contact */
 .contact { padding: 110px 0; background: var(--ink); color: #fff; }

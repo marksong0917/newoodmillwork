@@ -36,6 +36,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://newoodmillwork.com/doors.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://newoodmillwork.com/warranty.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
@@ -81,6 +86,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://newoodmillwork.com/fr/doors.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://newoodmillwork.com/fr/warranty.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -124,6 +134,11 @@
     <loc>https://newoodmillwork.com/zh/commercial.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://newoodmillwork.com/zh/doors.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://newoodmillwork.com/zh/warranty.html</loc>
