@@ -202,6 +202,8 @@ figure.work-item:hover::after, figure.service-photo:hover::after { opacity: 1; }
 .trust-strip { background: var(--ink); padding: 20px 0; }
 .trust-strip-inner { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; text-align: center; }
 .trust-badge { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: #fff; background: rgba(255,255,255,0.12); padding: 8px 18px; border-radius: 999px; text-align: center; }
+.trust-badge-link { transition: background 0.15s; cursor: pointer; }
+.trust-badge-link:hover { background: rgba(255,255,255,0.22); }
 @media (max-width: 480px) { .trust-badge { font-size: 11px; letter-spacing: 0.04em; padding: 8px 14px; } }
 
 /* Process ("How It Works") */
