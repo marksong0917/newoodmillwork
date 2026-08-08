@@ -252,6 +252,12 @@ figure.work-item:hover::after, figure.service-photo:hover::after { opacity: 1; }
 }
 .door-jump a:hover { color: var(--ink); border-color: var(--ink-faint); }
 .door-collection-intro { max-width: 660px; font-size: 15px; color: var(--ink-soft); margin-bottom: 28px; line-height: 1.6; }
+.footer-referral {
+  text-align: center; font-size: 13.5px; color: var(--ink-soft);
+  padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--line);
+}
+.footer-referral a { color: var(--ink); font-weight: 600; text-decoration: underline; }
+.footer-referral a:hover { color: var(--ink-faint); }
 
 /* Contact */
 .contact { padding: 110px 0; background: var(--ink); color: #fff; }
