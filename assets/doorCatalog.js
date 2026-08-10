@@ -33,8 +33,8 @@ function buildCollection(prefix, category, collectionName, count, fileBase, ext)
 }
 
 export const DOOR_CATALOG = [
-  ...buildCollection('FP', 'flat-panel', 'Flat Panel', FLAT_COUNT, 'door-', 'webp'),
-  ...buildCollection('RP', 'raised-panel', 'Raised Panel', RAISED_COUNT, 'door-raised-', 'webp'),
+  ...buildCollection('FP', 'flat-panel', 'Flat Panel', FLAT_COUNT, 'door-', 'jpg'),
+  ...buildCollection('RP', 'raised-panel', 'Raised Panel', RAISED_COUNT, 'door-raised-', 'jpg'),
 ];
 
 export const DOOR_CATEGORIES = [
