@@ -26,6 +26,34 @@
 <link rel="preload" as="image" href="assets/hero/hero-kitchen.webp" fetchpriority="high">
 <link rel="stylesheet" href="styles.min.css">
 
+<style>
+  /* Sticky Flat/Raised jump bar — sits directly under the sticky site header */
+  .door-sticky-nav {
+    position: sticky; top: 66px; z-index: 90;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .door-sticky-inner { display: flex; gap: 10px; padding-top: 26px; padding-bottom: 14px; }
+  .door-sticky-nav a[data-target] {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--ink-faint);
+    border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px; transition: all 0.15s;
+  }
+  .door-sticky-nav a[data-target]:hover { color: var(--ink); border-color: var(--ink-faint); }
+  .door-sticky-nav a[data-target].active { color: #fff; background: var(--ink); border-color: var(--ink); }
+  /* Keep anchor jumps from hiding behind the header + sticky bar */
+  #flat-panel, #raised-panel { scroll-margin-top: 120px; }
+  /* Door gallery tiles: taller portrait crop on a white backdrop */
+  .door-item img { aspect-ratio: 0.5; background: #ffffff; }
+
+  /* Order popup overlay */
+  .order-popup {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    flex-direction: column; background: var(--paper-soft, #f6f6f5);
+  }
+  .order-popup.is-open { display: flex; }
+  .order-popup-frame { flex: 1; border: none; width: 100%; }
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -111,12 +139,18 @@
   </div>
 </section>
 
+<div class="door-sections">
+
+<nav class="door-sticky-nav" id="doorStickyNav">
+  <div class="wrap door-sticky-inner" style="align-items:center;">
+    <a href="#flat-panel" data-target="flat-panel">Flat Panel</a>
+    <a href="#raised-panel" data-target="raised-panel">Raised Panel</a>
+    <button type="button" class="btn-primary" id="orderDoorBtn" style="margin-left:auto; white-space:nowrap; cursor:pointer; display:none;">Order Doors</button>
+  </div>
+</nav>
+
 <section class="work reveal" id="flat-panel">
   <div class="wrap">
-    <div class="door-jump">
-      <a href="#flat-panel">Flat Panel</a>
-      <a href="#raised-panel">Raised Panel</a>
-    </div>
     <p class="eyebrow">MDF DOORS &mdash; FLAT PANEL</p>
     <h2>Flat Panel Collection</h2>
     <p class="door-collection-intro">Flat panel doors feature a smooth, single-level center panel with clean, simple lines &mdash; a popular choice for modern and transitional kitchens where a streamlined look is the goal. Shown here unfinished and ready for your choice of paint or finish color. Click any style to view it larger.</p>
@@ -143,10 +177,6 @@
 
 <section class="work reveal" id="raised-panel" style="background:var(--paper-soft);">
   <div class="wrap">
-    <div class="door-jump">
-      <a href="#flat-panel">Flat Panel</a>
-      <a href="#raised-panel">Raised Panel</a>
-    </div>
     <p class="eyebrow">MDF DOORS &mdash; RAISED PANEL</p>
     <h2>Raised Panel Collection</h2>
     <p class="door-collection-intro">Raised panel doors feature a center panel that sits higher than the surrounding frame, adding dimension, shadow line, and a traditional, furniture-like quality &mdash; a classic choice for kitchens and cabinetry that want warmth and detail. Shown here unfinished and ready for your choice of paint or finish color. Click any style to view it larger.</p>
@@ -172,6 +202,8 @@
     </div>
   </div>
 </section>
+
+</div><!-- /.door-sections -->
 
 <section class="cta-band reveal">
   <div class="wrap">
@@ -221,6 +253,66 @@
     <p>Composite wood materials meet TSCA Title VI / CARB Phase 2 formaldehyde emission standards. <a href="warranty.html">Learn more about our materials &amp; warranty</a>.</p>
   </div>
 </div>
+<!-- Order popup overlay -->
+<div class="order-popup" id="orderPopup" role="dialog" aria-modal="true" aria-label="Door Order Form">
+  <iframe class="order-popup-frame" id="orderPopupFrame" src="" title="Door Order Form"></iframe>
+</div>
+
 <script src="script.min.js"></script>
+<script>
+  // Scroll-spy: highlight the sticky Flat/Raised link for the section in view
+  (function () {
+    const nav = document.getElementById('doorStickyNav');
+    if (!nav) return;
+    const links = Array.from(nav.querySelectorAll('a[data-target]'));
+    const sections = links.map(l => document.getElementById(l.dataset.target));
+    const OFFSET = 140; // header (~66) + sticky bar (~48) + breathing room
+
+    function sync() {
+      let activeIdx = 0;
+      sections.forEach((sec, i) => {
+        if (sec && sec.getBoundingClientRect().top <= OFFSET) activeIdx = i;
+      });
+      links.forEach((l, i) => l.classList.toggle('active', i === activeIdx));
+    }
+
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  })();
+
+  // Order popup
+  (function () {
+    const popup  = document.getElementById('orderPopup');
+    const frame  = document.getElementById('orderPopupFrame');
+    const openBtn  = document.getElementById('orderDoorBtn');
+
+    function openPopup() {
+      frame.src = 'door-order.html';
+      popup.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function requestClose() {
+      try { frame.contentWindow.postMessage({ type: 'requestClose' }, '*'); }
+      catch (e) { closePopup(); }
+    }
+
+    function closePopup() {
+      popup.classList.remove('is-open');
+      document.body.style.overflow = '';
+      setTimeout(() => { frame.src = ''; }, 300);
+    }
+
+    openBtn.addEventListener('click', openPopup);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && popup.classList.contains('is-open')) requestClose();
+    });
+    window.addEventListener('message', e => {
+      if (e.data && e.data.type === 'closeOk') closePopup();
+    });
+    window.closeOrderPopup = closePopup;
+  })();
+</script>
 </body>
 </html>

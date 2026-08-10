@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/brand/favicon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<title>Create an Order | Newood Millwork</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.min.css">
+<link rel="stylesheet" href="door-order.css">
+</head>
+<body class="do-body">
+
+<!-- App bar -->
+<header class="do-appbar">
+  <span class="do-appbar-title">Create an Order</span>
+  <button type="button" class="do-close-btn" id="closeBtn">
+    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="1" y1="1" x2="10" y2="10"/><line x1="10" y1="1" x2="1" y2="10"/></svg>
+    Close
+  </button>
+</header>
+
+<!-- Door Picker Modal -->
+<div id="doorPicker" class="dp-overlay" role="dialog" aria-modal="true" aria-label="Select Door Style" hidden>
+  <div class="dp-dialog">
+    <div class="dp-head">
+      <div>
+        <h2 class="dp-title">Select Door Style</h2>
+        <p class="dp-sub">Click a door to select.</p>
+      </div>
+      <button type="button" class="dp-close" id="dpClose" aria-label="Close">✕</button>
+    </div>
+    <div class="dp-controls">
+      <div class="dp-tabs" id="dpTabs">
+        <button type="button" class="dp-tab active" data-cat="flat-panel">Flat Panel</button>
+        <button type="button" class="dp-tab" data-cat="raised-panel">Raised Panel</button>
+      </div>
+    </div>
+    <div class="dp-grid" id="dpGrid"></div>
+  </div>
+</div>
+
+<!-- Main -->
+<main class="do-main">
+
+  <!-- Order meta -->
+  <div class="do-meta">
+    <span class="do-meta-item">
+      <span class="do-meta-label">PO #</span>
+      <span class="do-meta-val" id="poDisplay"></span>
+    </span>
+    <span class="do-meta-sep">·</span>
+    <span class="do-meta-item">
+      <span class="do-meta-label">Date</span>
+      <span class="do-meta-val" id="dateDisplay"></span>
+    </span>
+  </div>
+
+  <!-- Order info fields -->
+  <div class="do-header-fields">
+    <div class="do-field">
+      <label class="do-field-label" for="nameInput">Name / Company</label>
+      <input type="text" id="nameInput" class="do-field-inp" placeholder="Your name or company" autocomplete="off">
+    </div>
+    <div class="do-field">
+      <label class="do-field-label" for="emailInput">Email</label>
+      <input type="email" id="emailInput" class="do-field-inp" placeholder="your@email.com" autocomplete="email">
+    </div>
+    <div class="do-field">
+      <label class="do-field-label" for="phoneInput">Phone</label>
+      <input type="tel" id="phoneInput" class="do-field-inp" placeholder="(604) 000-0000" autocomplete="tel">
+    </div>
+    <div class="do-field do-field-grow">
+      <label class="do-field-label" for="orderNotesInput">Order Notes</label>
+      <input type="text" id="orderNotesInput" class="do-field-inp" placeholder="Delivery, shipping, or other notes" autocomplete="off">
+    </div>
+  </div>
+
+  <!-- Groups rendered by JS -->
+  <div id="orderBody"></div>
+
+  <!-- Add Item -->
+  <div class="do-add-wrap">
+    <div class="do-add-dropdown" id="addDropdown">
+      <button type="button" class="do-add-btn" id="addItemBtn">+ Add Item</button>
+      <ul class="do-add-menu" id="addMenu" hidden role="menu">
+        <li role="menuitem" data-type="Door">Door</li>
+        <li role="menuitem" data-type="Drawer">Drawer</li>
+        <li role="menuitem" data-type="Panel">Panel</li>
+        <li role="menuitem" data-type="Filler">Filler</li>
+        <li role="menuitem" data-type="Molding">Molding</li>
+        <li role="menuitem" data-type="Glass">Glass</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Totals -->
+  <div class="do-totals">
+    <span>Total Qty: <strong id="totalQty">0</strong></span>
+    <span class="do-totals-sep">·</span>
+    <span>Total Sq.Ft.: <strong id="totalSqft">0.00</strong></span>
+  </div>
+
+  <!-- Actions -->
+  <div class="do-actions">
+    <div class="do-actions-btns">
+      <button type="button" class="do-btn do-btn-ghost" id="downloadCsvBtn">Download CSV</button>
+      <button type="button" class="do-btn" id="sendBtn">Send to Newood</button>
+    </div>
+  </div>
+
+</main>
+
+<script type="module" src="assets/door-order/app.js"></script>
+</body>
+</html>
