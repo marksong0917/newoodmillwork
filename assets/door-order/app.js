@@ -577,6 +577,7 @@ async function sendEmailWithCsv() {
 
   const payload = JSON.stringify({
     to: TO_EMAIL,
+    cc: order.email || '',
     subject,
     body,
     csv:      toBase64(buildCsv()),
