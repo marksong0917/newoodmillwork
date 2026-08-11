@@ -63,21 +63,23 @@
   <!-- Order info fields -->
   <div class="do-header-fields">
     <div class="do-field">
-      <label class="do-field-label" for="nameInput">Name / Company</label>
-      <input type="text" id="nameInput" class="do-field-inp" placeholder="Your name or company" autocomplete="off">
+      <label class="do-field-label" for="nameInput">Name / Company *</label>
+      <input type="text" id="nameInput" class="do-field-inp" placeholder="Your name or company" autocomplete="off" required>
     </div>
     <div class="do-field">
-      <label class="do-field-label" for="emailInput">Email</label>
-      <input type="email" id="emailInput" class="do-field-inp" placeholder="your@email.com" autocomplete="email">
+      <label class="do-field-label" for="emailInput">Email *</label>
+      <input type="email" id="emailInput" class="do-field-inp" placeholder="your@email.com" autocomplete="email" required>
+      <span class="do-field-hint">We'll CC your order to this email.</span>
     </div>
     <div class="do-field">
-      <label class="do-field-label" for="phoneInput">Phone</label>
-      <input type="tel" id="phoneInput" class="do-field-inp" placeholder="(604) 000-0000" autocomplete="tel">
+      <label class="do-field-label" for="phoneInput">Phone *</label>
+      <input type="tel" id="phoneInput" class="do-field-inp" placeholder="(604) 000-0000" autocomplete="tel" required>
     </div>
-    <div class="do-field do-field-grow">
-      <label class="do-field-label" for="orderNotesInput">Order Notes</label>
-      <input type="text" id="orderNotesInput" class="do-field-inp" placeholder="Delivery, shipping, or other notes" autocomplete="off">
-    </div>
+  </div>
+
+  <div class="do-field do-field-notes">
+    <label class="do-field-label" for="orderNotesInput">Order Notes</label>
+    <textarea id="orderNotesInput" class="do-field-inp do-field-textarea" rows="3" placeholder="Delivery, shipping, or other notes"></textarea>
   </div>
 
   <!-- Groups rendered by JS -->
@@ -90,13 +92,11 @@
       <ul class="do-add-menu" id="addMenu" hidden role="menu">
         <li role="menuitem" data-type="Door">Door</li>
         <li role="menuitem" data-type="Drawer">Drawer</li>
-        <li role="menuitem" data-type="Panel">Panel</li>
-        <li role="menuitem" data-type="Filler">Filler</li>
-        <li role="menuitem" data-type="Molding">Molding</li>
-        <li role="menuitem" data-type="Glass">Glass</li>
       </ul>
     </div>
   </div>
+
+  <p class="do-size-note"><strong>Note:</strong> Width and Height are required for every item. If a door's dimensions fall below standard construction minimums, we'll adjust the size slightly as needed to keep the build structurally reasonable.</p>
 
   <!-- Totals -->
   <div class="do-totals">

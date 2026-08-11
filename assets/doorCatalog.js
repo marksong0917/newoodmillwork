@@ -23,7 +23,7 @@ function buildCollection(prefix, category, collectionName, count, fileBase, ext)
       category,
       collectionName,
       number: n,
-      name: `Door #${n}`,
+      name: `${prefix} Door #${n}`,
       image: `assets/gallery/${fileBase}${nn}.${ext}`,
       alt: `Newood Millwork MDF ${collectionName.toLowerCase()} door style #${n}`,
       active: true,

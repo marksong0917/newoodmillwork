@@ -3,10 +3,10 @@
 
 import { DOOR_CATALOG, getDoorById } from '../doorCatalog.js';
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6ojzNCxUuneuyiyA0O9KgYT0RYcTWg7DAKTyFDDcECVKonvZRYIUkLcOS2fqvku8/exec';
-const TO_EMAIL   = 'elainezhang9286@gmail.com';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLkJmOjRyYX9BPc2QETBTuLILE1GyKPiYBalsxMQnKJHS9DDhOpRUcLH-svBg5Bo3D/exec';
+const TO_EMAIL   = 'info@newoodmillwork.com';
 
-const TYPE_ORDER = ['Door', 'Drawer', 'Panel', 'Filler', 'Molding', 'Glass'];
+const TYPE_ORDER = ['Door', 'Drawer'];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -281,7 +281,7 @@ function makeStyleBtn(item) {
       img.className = 'ot-thumb';
       const label = document.createElement('span');
       label.className   = 'ot-style-label';
-      label.textContent = `${door.collectionName} ${door.name}`;
+      label.textContent = door.name;
       const caret = document.createElement('span');
       caret.className   = 'ot-caret';
       caret.textContent = '▾';
@@ -465,7 +465,7 @@ function buildCsv() {
       order.poNumber, order.date, order.nameCompany, order.email, order.phone,
       item.itemType,
       door?.collectionName ?? '',
-      door ? `${door.collectionName} #${door.number}` : '',
+      door?.name ?? '',
       door?.id ?? '',
       item.itemType === 'Door' ? 'MDF' : '',
       item.width, item.height, item.quantity, item.notes,
@@ -537,7 +537,7 @@ async function sendEmailWithCsv() {
     const door  = item.doorStyleId ? getDoorById(item.doorStyleId) : null;
     const lines = [`${i + 1}. ${item.itemType}`];
     if (item.itemType === 'Door') {
-      lines.push(`   Door Style: ${door ? `${door.collectionName} Door #${door.number}` : '—'}`);
+      lines.push(`   Door Style: ${door ? door.name : '—'}`);
       lines.push(`   Material: MDF`);
     }
     lines.push(`   Size: ${item.width || '?'}" × ${item.height || '?'}"`);
@@ -545,6 +545,20 @@ async function sendEmailWithCsv() {
     if (item.notes) lines.push(`   Notes: ${item.notes}`);
     return lines.join('\n');
   }).join('\n\n');
+
+  const subitems = order.items.map(item => {
+    const door = item.doorStyleId ? getDoorById(item.doorStyleId) : null;
+    return {
+      itemType: item.itemType,
+      style:    door ? door.name : '',
+      material: item.itemType === 'Door' ? 'MDF' : '',
+      width:    item.width,
+      height:   item.height,
+      quantity: item.quantity,
+      notes:    item.notes,
+      sqft:     sqft(item).toFixed(2),
+    };
+  });
 
   const body = [
     'A new order has been submitted through the Newood Millwork website.',
@@ -582,6 +596,19 @@ async function sendEmailWithCsv() {
     body,
     csv:      toBase64(buildCsv()),
     filename,
+    monday: {
+      poNumber:   order.poNumber,
+      customer:   order.nameCompany || '',
+      email:      order.email || '',
+      phone:      order.phone || '',
+      date:       order.date,
+      totalItems: order.items.length,
+      totalQty:   calcTotalQty(),
+      totalSqft:  calcTotalSqft().toFixed(2),
+      details:    itemLines,
+      orderNotes: order.orderNotes || '',
+      items:      subitems,
+    },
   });
 
   await sendViaFormIframe(payload);
@@ -634,6 +661,23 @@ sendBtn.addEventListener('click', async () => {
     showSendResult('Please enter your email address.', true);
     emailInp?.focus();
     return;
+  }
+  if (!(order.phone || '').trim()) {
+    showSendResult('Please enter your phone number.', true);
+    phoneInp?.focus();
+    return;
+  }
+  if (!order.items.length) {
+    showSendResult('Please add at least one item.', true);
+    addItemBtn?.focus();
+    return;
+  }
+  for (const item of order.items) {
+    if (!String(item.width || '').trim() || !String(item.height || '').trim()) {
+      showSendResult('Please enter a Width and Height for every item.', true);
+      document.getElementById(`${item.width ? 'h' : 'w'}_${item.id}`)?.focus();
+      return;
+    }
   }
 
   const origText      = sendBtn.textContent;
