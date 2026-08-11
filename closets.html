@@ -70,6 +70,14 @@
   ]
 }
 </script>
+<style>
+  .order-popup {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    flex-direction: column; background: var(--paper-soft, #f6f6f5);
+  }
+  .order-popup.is-open { display: flex; }
+  .order-popup-frame { flex: 1; border: none; width: 100%; }
+</style>
 </head>
 <body>
 
@@ -96,7 +104,7 @@
         </div>
       </div>
       <a href="doors.html">Doors</a>
-      <a href="door-order.html">Create an Order</a>
+      <a href="#" id="createOrderNavLink">Create an Order</a>
       <a href="index.html#contact">Contact</a>
     </nav>
     <div class="lang-switch">
@@ -242,6 +250,45 @@
     <p>Composite wood materials meet TSCA Title VI / CARB Phase 2 formaldehyde emission standards. <a href="warranty.html">Learn more about our materials &amp; warranty</a>.</p>
   </div>
 </div>
+<!-- Order popup overlay -->
+<div class="order-popup" id="orderPopup" role="dialog" aria-modal="true" aria-label="Door Order Form">
+  <iframe class="order-popup-frame" id="orderPopupFrame" src="" title="Door Order Form"></iframe>
+</div>
+
 <script src="script.min.js"></script>
+<script>
+  // Order popup
+  (function () {
+    const popup    = document.getElementById('orderPopup');
+    const frame    = document.getElementById('orderPopupFrame');
+    const navLink  = document.getElementById('createOrderNavLink');
+
+    function openPopup() {
+      frame.src = 'door-order.html';
+      popup.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function requestClose() {
+      try { frame.contentWindow.postMessage({ type: 'requestClose' }, '*'); }
+      catch (e) { closePopup(); }
+    }
+
+    function closePopup() {
+      popup.classList.remove('is-open');
+      document.body.style.overflow = '';
+      setTimeout(() => { frame.src = ''; }, 300);
+    }
+
+    navLink.addEventListener('click', e => { e.preventDefault(); openPopup(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && popup.classList.contains('is-open')) requestClose();
+    });
+    window.addEventListener('message', e => {
+      if (e.data && e.data.type === 'closeOk') closePopup();
+    });
+    window.closeOrderPopup = closePopup;
+  })();
+</script>
 </body>
 </html>
