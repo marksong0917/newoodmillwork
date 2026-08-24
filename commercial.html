@@ -8,10 +8,6 @@
 <title>Commercial Millwork &amp; Retail Fixtures | Newood Millwork</title>
 <meta name="description" content="Commercial millwork, retail fixtures, and cafe and restaurant casework by Newood Millwork, serving Concord and the GTA.">
 <link rel="canonical" href="https://newoodmillwork.com/commercial.html">
-<link rel="alternate" hreflang="en" href="https://newoodmillwork.com/commercial.html">
-<link rel="alternate" hreflang="fr" href="https://newoodmillwork.com/fr/commercial.html">
-<link rel="alternate" hreflang="zh" href="https://newoodmillwork.com/zh/commercial.html">
-<link rel="alternate" hreflang="x-default" href="https://newoodmillwork.com/commercial.html">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Commercial Millwork &amp; Retail Fixtures | Newood Millwork">
@@ -70,14 +66,6 @@
   ]
 }
 </script>
-<style>
-  .order-popup {
-    display: none; position: fixed; inset: 0; z-index: 500;
-    flex-direction: column; background: var(--paper-soft, #f6f6f5);
-  }
-  .order-popup.is-open { display: flex; }
-  .order-popup-frame { flex: 1; border: none; width: 100%; }
-</style>
 </head>
 <body>
 
@@ -92,7 +80,6 @@
     </a>
     <nav class="main-nav" id="mainNav">
       <a href="index.html">Home</a>
-      <a href="why-us.html">Why Us</a>
       <div class="nav-dropdown">
         <button class="nav-dropdown-trigger" type="button">Services</button>
         <div class="nav-dropdown-menu">
@@ -103,17 +90,10 @@
           <a href="commercial.html">Commercial</a>
         </div>
       </div>
-      <a href="doors.html">Doors</a>
-      <a href="#" id="createOrderNavLink">Create an Order</a>
+      <!-- <a href="doors.html">Doors</a> -->
+      <!-- <a href="#" id="createOrderNavLink">Create an Order</a> -->
       <a href="index.html#contact">Contact</a>
     </nav>
-    <div class="lang-switch">
-      <a href="commercial.html" class="active">EN</a>
-      <span class="sep">|</span>
-      <a href="fr/commercial.html">FR</a>
-      <span class="sep">|</span>
-      <a href="zh/commercial.html">中文</a>
-    </div>
     <a href="tel:19056606696" class="btn-call">(905) 660-6696</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -248,7 +228,6 @@
   </div>
 </footer>
 
-
 <div class="mobile-cta">
   <a href="tel:19056606696" class="mobile-cta-call">Call Now</a>
   <a href="index.html#contact" class="mobile-cta-quote">Contact Us</a>
@@ -271,39 +250,5 @@
 </div>
 
 <script src="script.min.js"></script>
-<script>
-  // Order popup
-  (function () {
-    const popup    = document.getElementById('orderPopup');
-    const frame    = document.getElementById('orderPopupFrame');
-    const navLink  = document.getElementById('createOrderNavLink');
-
-    function openPopup() {
-      frame.src = 'door-order.html';
-      popup.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function requestClose() {
-      try { frame.contentWindow.postMessage({ type: 'requestClose' }, '*'); }
-      catch (e) { closePopup(); }
-    }
-
-    function closePopup() {
-      popup.classList.remove('is-open');
-      document.body.style.overflow = '';
-      setTimeout(() => { frame.src = ''; }, 300);
-    }
-
-    navLink.addEventListener('click', e => { e.preventDefault(); openPopup(); });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && popup.classList.contains('is-open')) requestClose();
-    });
-    window.addEventListener('message', e => {
-      if (e.data && e.data.type === 'closeOk') closePopup();
-    });
-    window.closeOrderPopup = closePopup;
-  })();
-</script>
 </body>
 </html>

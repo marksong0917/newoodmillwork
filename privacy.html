@@ -8,23 +8,11 @@
 <title>Privacy Policy | Newood Millwork</title>
 <meta name="description" content="Newood Millwork's privacy policy. We never sell or trade your personal information.">
 <link rel="canonical" href="https://newoodmillwork.com/privacy.html">
-<link rel="alternate" hreflang="en" href="https://newoodmillwork.com/privacy.html">
-<link rel="alternate" hreflang="fr" href="https://newoodmillwork.com/fr/privacy.html">
-<link rel="alternate" hreflang="zh" href="https://newoodmillwork.com/zh/privacy.html">
-<link rel="alternate" hreflang="x-default" href="https://newoodmillwork.com/privacy.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.min.css">
-<style>
-  .order-popup {
-    display: none; position: fixed; inset: 0; z-index: 500;
-    flex-direction: column; background: var(--paper-soft, #f6f6f5);
-  }
-  .order-popup.is-open { display: flex; }
-  .order-popup-frame { flex: 1; border: none; width: 100%; }
-</style>
 </head>
 <body>
 
@@ -39,7 +27,6 @@
     </a>
     <nav class="main-nav" id="mainNav">
       <a href="index.html">Home</a>
-      <a href="why-us.html">Why Us</a>
       <div class="nav-dropdown">
         <button class="nav-dropdown-trigger" type="button">Services</button>
         <div class="nav-dropdown-menu">
@@ -50,17 +37,10 @@
           <a href="commercial.html">Commercial</a>
         </div>
       </div>
-      <a href="doors.html">Doors</a>
-      <a href="#" id="createOrderNavLink">Create an Order</a>
+      <!-- <a href="doors.html">Doors</a> -->
+      <!-- <a href="#" id="createOrderNavLink">Create an Order</a> -->
       <a href="index.html#contact">Contact</a>
     </nav>
-    <div class="lang-switch">
-      <a href="privacy.html" class="active">EN</a>
-      <span class="sep">|</span>
-      <a href="fr/privacy.html">FR</a>
-      <span class="sep">|</span>
-      <a href="zh/privacy.html">中文</a>
-    </div>
     <a href="tel:19056606696" class="btn-call">(905) 660-6696</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -140,39 +120,5 @@
 </div>
 
 <script src="script.min.js"></script>
-<script>
-  // Order popup
-  (function () {
-    const popup    = document.getElementById('orderPopup');
-    const frame    = document.getElementById('orderPopupFrame');
-    const navLink  = document.getElementById('createOrderNavLink');
-
-    function openPopup() {
-      frame.src = 'door-order.html';
-      popup.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function requestClose() {
-      try { frame.contentWindow.postMessage({ type: 'requestClose' }, '*'); }
-      catch (e) { closePopup(); }
-    }
-
-    function closePopup() {
-      popup.classList.remove('is-open');
-      document.body.style.overflow = '';
-      setTimeout(() => { frame.src = ''; }, 300);
-    }
-
-    navLink.addEventListener('click', e => { e.preventDefault(); openPopup(); });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && popup.classList.contains('is-open')) requestClose();
-    });
-    window.addEventListener('message', e => {
-      if (e.data && e.data.type === 'closeOk') closePopup();
-    });
-    window.closeOrderPopup = closePopup;
-  })();
-</script>
 </body>
 </html>

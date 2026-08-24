@@ -8,10 +8,6 @@
 <title>Newood Millwork Inc | Custom Cabinetry &amp; Millwork, Concord ON</title>
 <meta name="description" content="Newood Millwork builds custom cabinetry, closets, and millwork from our Concord, Ontario shop, serving the Greater Toronto Area.">
 <link rel="canonical" href="https://newoodmillwork.com/">
-<link rel="alternate" hreflang="en" href="https://newoodmillwork.com/">
-<link rel="alternate" hreflang="fr" href="https://newoodmillwork.com/fr/">
-<link rel="alternate" hreflang="zh" href="https://newoodmillwork.com/zh/">
-<link rel="alternate" hreflang="x-default" href="https://newoodmillwork.com/">
 
 <!-- Open Graph / social preview -->
 <meta property="og:type" content="business.business">
@@ -59,14 +55,6 @@
   ]
 }
 </script>
-<style>
-  .order-popup {
-    display: none; position: fixed; inset: 0; z-index: 500;
-    flex-direction: column; background: var(--paper-soft, #f6f6f5);
-  }
-  .order-popup.is-open { display: flex; }
-  .order-popup-frame { flex: 1; border: none; width: 100%; }
-</style>
 </head>
 <body>
 
@@ -81,7 +69,6 @@
     </a>
     <nav class="main-nav" id="mainNav">
       <a href="#top">Home</a>
-      <a href="why-us.html">Why Us</a>
       <div class="nav-dropdown">
         <button class="nav-dropdown-trigger" type="button">Services</button>
         <div class="nav-dropdown-menu">
@@ -92,17 +79,10 @@
           <a href="commercial.html">Commercial</a>
         </div>
       </div>
-      <a href="doors.html">Doors</a>
-      <a href="#" id="createOrderNavLink">Create an Order</a>
+      <!-- <a href="doors.html">Doors</a> -->
+      <!-- <a href="#" id="createOrderNavLink">Create an Order</a> -->
       <a href="#contact">Contact</a>
     </nav>
-    <div class="lang-switch">
-      <a href="index.html" class="active">EN</a>
-      <span class="sep">|</span>
-      <a href="fr/index.html">FR</a>
-      <span class="sep">|</span>
-      <a href="zh/index.html">中文</a>
-    </div>
     <a href="tel:19056606696" class="btn-call">(905) 660-6696</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -114,18 +94,15 @@
   <div class="hero-media"></div>
   <div class="hero-scrim"></div>
   <div class="wrap hero-inner">
-    <p class="eyebrow eyebrow-light">MEASURED &middot; CUT &middot; INSTALLED</p>
-    <h1>Health-Certified Materials.<br>Zero Shortcuts.</h1>
-    <p class="hero-sub">Proudly Canadian and built to last, our cabinetry is built 100% in-house &mdash; never subcontracted &mdash; using boards from Egger, Tafisa &amp; Uniboard that meet strict health and safety standards.</p>
+    <h1>Cabinets & Kitchens <br>Architectural Millwork</h1>
+    <p class="hero-sub">Our custom cabinetry is built to last and made in Canada to maximize every inch of your home </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Get Your Free Quote</a>
       <a href="#work" class="btn-ghost">See Our Work</a>
     </div>
     <ul class="hero-badges">
-      <li>100% In-House Crew</li>
-      <li>Direct Lifetime Warranty</li>
-      <li>Non-Toxic Certified Boards</li>
-      <li>Free Consultation</li>
+      <li>Lifetime Warranty</li>
+      <li>Made in Canada</li>
     </ul>
   </div>
 </section>
@@ -134,7 +111,7 @@
   <div class="wrap trust-strip-inner">
     <a href="https://supportontariomade.ca/manufacturer/concord/newood-millwork-inc" target="_blank" rel="noopener" class="trust-badge trust-badge-link">&#127809; MADE IN CANADA &mdash; VERIFIED ONTARIO MADE MANUFACTURER</a>
     <span class="trust-badge">LIFETIME WARRANTY</span>
-    <span class="trust-badge">$5M INSURED &amp; WSIB COMPLIANT</span>
+    <span class="trust-badge">INSURED &amp; WSIB COMPLIANT</span>
   </div>
 </section>
 
@@ -337,7 +314,6 @@
   </div>
 </footer>
 
-
 <div class="mobile-cta">
   <a href="tel:19056606696" class="mobile-cta-call">Call Now</a>
   <a href="#contact" class="mobile-cta-quote">Contact Us</a>
@@ -360,39 +336,5 @@
 </div>
 
 <script src="script.min.js"></script>
-<script>
-  // Order popup
-  (function () {
-    const popup    = document.getElementById('orderPopup');
-    const frame    = document.getElementById('orderPopupFrame');
-    const navLink  = document.getElementById('createOrderNavLink');
-
-    function openPopup() {
-      frame.src = 'door-order.html';
-      popup.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function requestClose() {
-      try { frame.contentWindow.postMessage({ type: 'requestClose' }, '*'); }
-      catch (e) { closePopup(); }
-    }
-
-    function closePopup() {
-      popup.classList.remove('is-open');
-      document.body.style.overflow = '';
-      setTimeout(() => { frame.src = ''; }, 300);
-    }
-
-    navLink.addEventListener('click', e => { e.preventDefault(); openPopup(); });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && popup.classList.contains('is-open')) requestClose();
-    });
-    window.addEventListener('message', e => {
-      if (e.data && e.data.type === 'closeOk') closePopup();
-    });
-    window.closeOrderPopup = closePopup;
-  })();
-</script>
 </body>
 </html>

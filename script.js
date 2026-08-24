@@ -148,3 +148,39 @@ if (!prefersReducedMotion && 'IntersectionObserver' in window) {
 } else {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
 }
+
+// Create-an-Order popup (loads door-order.html in an iframe overlay).
+// Guarded so pages without the popup markup or an active nav link (e.g. a
+// commented-out link) don't throw — only runs once all three pieces exist.
+(function () {
+  const popup   = document.getElementById('orderPopup');
+  const frame   = document.getElementById('orderPopupFrame');
+  const navLink = document.getElementById('createOrderNavLink');
+  if (!popup || !frame || !navLink) return;
+
+  function openPopup() {
+    frame.src = 'door-order.html';
+    popup.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function requestClose() {
+    try { frame.contentWindow.postMessage({ type: 'requestClose' }, '*'); }
+    catch (e) { closePopup(); }
+  }
+
+  function closePopup() {
+    popup.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(() => { frame.src = ''; }, 300);
+  }
+
+  navLink.addEventListener('click', e => { e.preventDefault(); openPopup(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && popup.classList.contains('is-open')) requestClose();
+  });
+  window.addEventListener('message', e => {
+    if (e.data && e.data.type === 'closeOk') closePopup();
+  });
+  window.closeOrderPopup = closePopup;
+})();

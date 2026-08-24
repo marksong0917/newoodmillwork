@@ -94,11 +94,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   white-space: nowrap; transition: background 0.12s, color 0.12s;
 }
 .nav-dropdown-menu a:hover { background: var(--paper-soft); color: #B9793C; }
-.lang-switch { display: flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 11px; white-space: nowrap; }
-.lang-switch a { color: var(--ink-faint); padding: 4px 1px; }
-.lang-switch a.active { color: var(--ink); font-weight: 700; }
-.lang-switch a:hover { color: var(--ink); }
-.lang-switch .sep { color: var(--line); font-size: 10px; }
 .main-nav a { font-size: 14px; font-weight: 500; letter-spacing: 0.01em; }
 .main-nav a:hover { color: var(--ink-faint); }
 .btn-call {
@@ -442,3 +437,11 @@ figure.work-item:hover::after, figure.service-photo:hover::after { opacity: 1; }
   .btn-call { display: none; }
   .hero-inner { padding: 60px 24px; }
 }
+
+/* Create-an-Order popup overlay (shared across all pages via script.js) */
+.order-popup {
+  display: none; position: fixed; inset: 0; z-index: 500;
+  flex-direction: column; background: var(--paper-soft, #f6f6f5);
+}
+.order-popup.is-open { display: flex; }
+.order-popup-frame { flex: 1; border: none; width: 100%; }
