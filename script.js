@@ -1,8 +1,6 @@
-// Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Lightbox for gallery images (figure.work-item / a.work-item and .service-photo images —
-// homepage pillar cards are links to service pages and keep their normal nav behaviour)
 const lightboxTriggers = document.querySelectorAll('.work-item img, .service-photo img');
 if (lightboxTriggers.length) {
   const images = Array.from(lightboxTriggers);
@@ -33,8 +31,6 @@ if (lightboxTriggers.length) {
   }
 
   images.forEach((img, i) => {
-    // Only intercept clicks on images that aren't themselves inside a plain <a> nav link
-    // (work-item figures use lightbox; pillar/gallery links to other pages are untouched)
     if (img.closest('figure')) {
       img.addEventListener('click', () => open(i));
     }
@@ -51,7 +47,6 @@ if (lightboxTriggers.length) {
   });
 }
 
-// Quote request form: 3-step wizard, builds a pre-filled email (no backend needed on a static site)
 const quoteForm = document.getElementById('quoteForm');
 if (quoteForm) {
   let currentStep = 1;
@@ -114,26 +109,25 @@ if (quoteForm) {
       details || '(none provided)'
     ].filter(Boolean);
 
-    const mailto = `mailto:info@newoodmillwork.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    const mailto = `mailto:info@newoodmillwork.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('
+'))}`;
     window.location.href = mailto;
   });
 }
 
-// Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
 
-navToggle.addEventListener('click', () => {
-  const open = mainNav.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
-
-mainNav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mainNav.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-});
 
-// Section entrance is handled purely by CSS (see .reveal in styles.css) —
-// no JS needed, so it can never leave a section stuck invisible.
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
