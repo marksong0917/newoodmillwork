@@ -1,6 +1,5 @@
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-
+// Lightbox for gallery images (figure.work-item / a.work-item and .service-photo images —
+// homepage pillar cards are links to service pages and keep their normal nav behaviour)
 const lightboxTriggers = document.querySelectorAll('.work-item img, .service-photo img');
 if (lightboxTriggers.length) {
   const images = Array.from(lightboxTriggers);
@@ -31,6 +30,8 @@ if (lightboxTriggers.length) {
   }
 
   images.forEach((img, i) => {
+    // Only intercept clicks on images that aren't themselves inside a plain <a> nav link
+    // (work-item figures use lightbox; pillar/gallery links to other pages are untouched)
     if (img.closest('figure')) {
       img.addEventListener('click', () => open(i));
     }
@@ -47,48 +48,16 @@ if (lightboxTriggers.length) {
   });
 }
 
+// Contact form: single-page form, builds a pre-filled email (no backend needed on a static site)
 const quoteForm = document.getElementById('quoteForm');
 if (quoteForm) {
-  let currentStep = 1;
-  let selectedType = '';
-  let selectedTimeline = '';
-
-  const steps = quoteForm.querySelectorAll('.form-step');
-  const dots = quoteForm.querySelectorAll('.form-progress-step');
-
-  function goToStep(n) {
-    currentStep = n;
-    steps.forEach(s => s.classList.toggle('active', Number(s.dataset.step) === n));
-    dots.forEach(d => {
-      const dn = Number(d.dataset.stepDot);
-      d.classList.toggle('active', dn === n);
-      d.classList.toggle('done', dn < n);
-    });
-  }
-
-  quoteForm.querySelectorAll('.form-option').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const step = btn.closest('.form-step');
-      step.querySelectorAll('.form-option').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      const stepNum = Number(step.dataset.step);
-      if (stepNum === 1) selectedType = btn.dataset.value;
-      if (stepNum === 2) selectedTimeline = btn.dataset.value;
-      setTimeout(() => goToStep(stepNum + 1), 200);
-    });
-  });
-
-  quoteForm.querySelectorAll('.form-back').forEach(btn => {
-    btn.addEventListener('click', () => goToStep(Number(btn.dataset.back)));
-  });
-
   quoteForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = document.getElementById('qName').value.trim();
     const email = document.getElementById('qEmail').value.trim();
     const phone = document.getElementById('qPhone').value.trim();
-    const size = document.getElementById('qSize').value.trim();
+    const type = document.getElementById('qType').value;
     const details = document.getElementById('qDetails').value.trim();
 
     if (!name || !email) {
@@ -96,38 +65,37 @@ if (quoteForm) {
       return;
     }
 
-    const subject = `Quote Request: ${selectedType || 'Project'} — ${name}`;
+    const subject = `Project Inquiry: ${type || 'Project'} — ${name}`;
     const bodyLines = [
       `Name: ${name}`,
       `Email: ${email}`,
       phone ? `Phone: ${phone}` : null,
-      `Project type: ${selectedType || 'Not specified'}`,
-      `Timeline: ${selectedTimeline || 'Not specified'}`,
-      size ? `Approximate size: ${size}` : null,
+      `Project type: ${type || 'Not specified'}`,
       '',
       'Project details:',
       details || '(none provided)'
     ].filter(Boolean);
 
-    const mailto = `mailto:info@newoodmillwork.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('
-'))}`;
+    const mailto = `mailto:info@newoodmillwork.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
     window.location.href = mailto;
   });
 }
 
+// Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
 
-if (navToggle && mainNav) {
-  navToggle.addEventListener('click', () => {
-    const open = mainNav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+navToggle.addEventListener('click', () => {
+  const open = mainNav.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
 
-  mainNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
+mainNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
   });
-}
+});
+
+// Section entrance is handled purely by CSS (see .reveal in styles.css) —
+// no JS needed, so it can never leave a section stuck invisible.

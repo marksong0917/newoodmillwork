@@ -1,6 +1,6 @@
 # Newood Millwork Inc. — Official Website
 
-Official source code repository for the **Newood Millwork Inc.** corporate website ([newoodmillwork.com](https://newoodmillwork.com/)). Built around three core service divisions — Custom Cabinets & Storage, Custom Kitchen & Bath, and Custom Commercial Millwork — manufactured out of our shop in Concord, Ontario, serving the Greater Toronto Area (GTA).
+Official source code repository for the **Newood Millwork Inc.** corporate website ([newoodmillwork.com](https://newoodmillwork.com/)). Built around three core service divisions — Custom Closets & Storage, Custom Kitchens, and Custom Commercial Millwork — manufactured out of our shop in Concord, Ontario, serving the Greater Toronto Area (GTA).
 
 ---
 
@@ -16,9 +16,9 @@ Official source code repository for the **Newood Millwork Inc.** corporate websi
 ## 📂 Project Directory Structure
 
 ```text
-├── index.html               # Homepage (hero, 3 divisions, about, testimonials, lead form)
-├── closets.html             # Custom Cabinets & Storage service page
-├── kitchens.html             # Custom Kitchen & Bath service page (kitchens + bathroom vanities)
+├── index.html               # Homepage (hero, 3 divisions, testimonials, contact)
+├── closets.html             # Custom Closets & Storage service page
+├── kitchens.html             # Custom Kitchens service page (kitchens + bathroom vanities)
 ├── commercial.html          # Custom Commercial Millwork service page
 ├── warranty.html            # Lifetime workmanship warranty & terms
 ├── privacy.html             # Privacy policy
@@ -35,7 +35,7 @@ Official source code repository for the **Newood Millwork Inc.** corporate websi
 └── README.md                  # This file
 ```
 
-**Note:** the site is English-only, three pages deep on services (Cabinets & Storage / Kitchen & Bath / Commercial Millwork). Bathroom vanities live on the Kitchen & Bath page rather than as their own page. There is no `vanities.html`, `office.html`, `why-us.html`, `door-order.html`, or `/fr/` / `/zh/` section — earlier versions of this repo had some of these; all references have been removed from every page's `<head>`, nav, and `sitemap.xml`.
+**Note:** the site is English-only, three pages deep on services (Closets & Storage / Kitchens / Commercial Millwork — the nav bar uses the short forms "Closets" and "Kitchen"). Bathroom vanities live on the Kitchens page rather than as their own page. There is no `vanities.html`, `office.html`, `why-us.html`, `door-order.html`, or `/fr/` / `/zh/` section — earlier versions of this repo had some of these; all references have been removed from every page's `<head>`, nav, and `sitemap.xml`. There is also no `about` section on the homepage anymore, and the contact section is a single-page form (no multi-step wizard) with no embedded map.
 
 ## ✏️ Making Changes
 
