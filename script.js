@@ -47,36 +47,52 @@ if (lightboxTriggers.length) {
   });
 }
 
-// Contact form: single-page form, builds a pre-filled email (no backend needed on a static site)
+// Contact form: submits to FormSubmit (a free static-site form backend — no
+// server needed) via fetch, so it works even for visitors with no email app
+// configured. Native form action="" is left in place as a no-JS fallback.
 const quoteForm = document.getElementById('quoteForm');
+const formStatus = document.getElementById('formStatus');
+
+function setFormStatus(message, kind) {
+  if (!formStatus) return;
+  formStatus.textContent = message;
+  formStatus.hidden = false;
+  formStatus.className = kind ? `form-status form-status-${kind}` : 'form-status';
+}
+
 if (quoteForm) {
-  quoteForm.addEventListener('submit', (e) => {
+  quoteForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name = document.getElementById('qName').value.trim();
     const email = document.getElementById('qEmail').value.trim();
-    const phone = document.getElementById('qPhone').value.trim();
-    const type = document.getElementById('qType').value;
-    const details = document.getElementById('qDetails').value.trim();
 
     if (!name || !email) {
-      alert('Please fill in your name and email so we can get back to you.');
+      setFormStatus('Please fill in your name and email so we can get back to you.', 'error');
       return;
     }
 
-    const subject = `Project Inquiry: ${type || 'Project'} — ${name}`;
-    const bodyLines = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      phone ? `Phone: ${phone}` : null,
-      `Project type: ${type || 'Not specified'}`,
-      '',
-      'Project details:',
-      details || '(none provided)'
-    ].filter(Boolean);
+    const submitBtn = quoteForm.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    formStatus.hidden = true;
 
-    const mailto = `mailto:info@newoodmillwork.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-    window.location.href = mailto;
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/info@newoodmillwork.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(quoteForm).entries()))
+      });
+      if (!response.ok) throw new Error('Request failed');
+
+      quoteForm.hidden = true;
+      setFormStatus("Thanks — your message is on its way. We'll get back to you within 24–48 business hours.", 'success');
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+      setFormStatus('Something went wrong sending that. Please email us directly at info@newoodmillwork.com and we\u2019ll get right back to you.', 'error');
+    }
   });
 }
 

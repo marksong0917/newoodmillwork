@@ -183,7 +183,12 @@
 
       <div class="contact-card">
         <h3>Send a Direct Message</h3>
-        <form id="quoteForm" novalidate>
+        <form id="quoteForm" novalidate action="https://formsubmit.co/info@newoodmillwork.com" method="POST">
+          <input type="hidden" name="_subject" value="New project inquiry — Newood Millwork website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://newoodmillwork.com/index.html#contact">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-field">
             <label for="qName">Your Name</label>
             <input type="text" id="qName" name="name" placeholder="John Smith" required>
@@ -210,8 +215,9 @@
             <textarea id="qDetails" name="details" rows="3" placeholder="Tell us briefly about your project..."></textarea>
           </div>
           <button type="submit" class="btn-primary">Send Message</button>
-          <p class="form-note">This opens an email to info@newoodmillwork.com with your answers filled in.</p>
         </form>
+        <p class="form-note">We reply within 24&ndash;48 business hours. Prefer email? Reach us directly at <a href="mailto:info@newoodmillwork.com">info@newoodmillwork.com</a>.</p>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
       </div>
     </div>
   </div>

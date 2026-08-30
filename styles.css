@@ -232,7 +232,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .contact-card .form-field input::placeholder,
 .contact-card .form-field textarea::placeholder { color: var(--ink-faint); }
 .contact-card .btn-primary { width: 100%; justify-content: center; margin-top: 4px; }
+.contact-card .btn-primary:disabled { opacity: 0.7; cursor: default; }
 .contact-card .form-note { font-size: 0.78rem; color: var(--ink-faint); margin: 12px 0 0; }
+.contact-card .form-note a { color: var(--copper-deep); }
+.form-status { font-size: 0.9rem; margin: 14px 0 0; padding: 12px 14px; border-radius: 2px; }
+.form-status-success { background: rgba(185,137,90,0.12); color: var(--copper-deep); border: 1px solid rgba(185,137,90,0.3); }
+.form-status-error { background: rgba(196,82,64,0.08); color: #A83D2E; border: 1px solid rgba(196,82,64,0.28); }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-950); padding: 44px 0 0; border-top: 1px solid var(--navy-line); }
