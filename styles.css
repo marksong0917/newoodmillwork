@@ -22,7 +22,7 @@
   --paper-soft: #F5F5F3;
   --ink: #14181F;
   --ink-soft: #545B68;
-  --ink-faint: #8A909C;
+  --ink-faint: #6E7480;
   --line: #E3E3E0;
 
   --max: 1180px;
@@ -252,7 +252,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .footer-supplier { display: flex; flex-direction: column; gap: 4px; }
 .footer-supplier strong { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em; color: var(--copper-light); }
 .footer-supplier span { font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
-.footer-compliance { font-size: 0.76rem; color: rgba(255,255,255,0.42); max-width: 560px; margin: 0 auto; }
+.footer-compliance { font-size: 0.76rem; color: rgba(255,255,255,0.52); max-width: 560px; margin: 0 auto; }
 
 /* ---------- Mobile CTA ---------- */
 .mobile-cta { display: none; }

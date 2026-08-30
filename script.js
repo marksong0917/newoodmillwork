@@ -1,6 +1,5 @@
-// Lightbox for gallery images (figure.work-item / a.work-item and .service-photo images —
-// homepage pillar cards are links to service pages and keep their normal nav behaviour)
-const lightboxTriggers = document.querySelectorAll('.work-item img, .service-photo img');
+// Lightbox for gallery images (figure.work-item images in the simple 3x3 project grids)
+const lightboxTriggers = document.querySelectorAll('.work-item img');
 if (lightboxTriggers.length) {
   const images = Array.from(lightboxTriggers);
   let current = 0;
