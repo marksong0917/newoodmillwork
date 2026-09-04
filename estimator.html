@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0">
+<meta name="robots" content="index, follow">
+
+<!-- Primary SEO -->
+<title>Free Kitchen Cabinet Estimator | Newood Millwork</title>
+<meta name="description" content="Get an instant, no-obligation kitchen cabinet estimate in under a minute. Free tool by Newood Millwork — custom cabinetry built in Concord, Ontario.">
+<meta name="keywords" content="kitchen estimator, custom cabinetry quote, kitchen renovation cost Ontario, cabinet maker York Region, custom kitchen pricing, Newood Millwork">
+<link rel="canonical" href="https://estimator.newoodmillwork.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://estimator.newoodmillwork.com/">
+<meta property="og:title" content="Free Kitchen Cabinet Estimator | Newood Millwork">
+<meta property="og:description" content="Get an instant budget estimate for custom kitchen cabinets, finishes, and countertops in under a minute — free, no obligation.">
+<meta property="og:image" content="https://newoodmillwork.com/assets/gallery/kitchen-01.webp">
+<meta property="og:site_name" content="Newood Millwork">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://estimator.newoodmillwork.com/">
+<meta name="twitter:title" content="Free Kitchen Cabinet Estimator | Newood Millwork">
+<meta name="twitter:description" content="Get an instant budget estimate for custom kitchen cabinets in under a minute — free, no obligation.">
+<meta name="twitter:image" content="https://newoodmillwork.com/assets/gallery/kitchen-01.webp">
+
+<link rel="icon" type="image/png" sizes="192x192" href="https://newoodmillwork.com/assets/brand/favicon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://newoodmillwork.com/assets/brand/favicon-32.png">
+
+<!-- Structured data: the tool itself, its parent business, and where it sits relative to the main site -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Kitchen Cabinet Estimator",
+  "url": "https://estimator.newoodmillwork.com/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Newood Millwork Inc",
+    "url": "https://newoodmillwork.com/",
+    "telephone": "+1-905-660-6696",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "450 Bowes Rd Unit 7-8",
+      "addressLocality": "Concord",
+      "addressRegion": "ON",
+      "postalCode": "L4K 1K3",
+      "addressCountry": "CA"
+    },
+    "areaServed": { "@type": "State", "name": "Ontario" }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Newood Millwork", "item": "https://newoodmillwork.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Custom Kitchens", "item": "https://newoodmillwork.com/kitchens.html" },
+    { "@type": "ListItem", "position": 3, "name": "Free Kitchen Estimator", "item": "https://estimator.newoodmillwork.com/" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   Design tokens — matches newoodmillwork.com exactly, kept
+   self-contained here so this tool never depends on the main
+   site's stylesheet being reachable at render time.
+   ============================================================ */
+:root {
+  --navy-950: #000A1F;
+  --navy-900: #05112C;
+  --navy-800: #11203E;
+  --navy-line: rgba(255, 255, 255, 0.10);
+  --copper: #B9895A;
+  --copper-deep: #8C6239;
+  --copper-light: #E4C9A6;
+  --paper: #FFFFFF;
+  --paper-soft: #F5F5F3;
+  --ink: #14181F;
+  --ink-soft: #545B68;
+  --ink-faint: #6E7480;
+  --line: #E3E3E0;
+  --max: 880px;
+  --radius: 3px;
+  --display: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: var(--sans); color: var(--ink); background: var(--paper);
+  line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--display); font-weight: 700; margin: 0 0 0.4em; line-height: 1.2; color: var(--navy-950); }
+p { margin: 0 0 1em; color: var(--ink-soft); }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--copper); outline-offset: 2px;
+}
+.eyebrow {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.16em; color: var(--copper-light); margin: 0 0 12px;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary, .btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--sans); font-weight: 700; font-size: 0.95rem;
+  padding: 14px 26px; border-radius: var(--radius); border: 1px solid transparent;
+  cursor: pointer; transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.15s var(--ease);
+}
+.btn-primary { background: var(--copper); color: var(--navy-950); width: 100%; }
+.btn-primary:hover { background: var(--copper-light); }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.btn-ghost { background: transparent; border-color: var(--navy-line); color: #fff; font-size: 0.85rem; padding: 9px 16px; }
+.btn-ghost:hover { border-color: var(--copper); color: var(--copper-light); }
+
+/* ---------- Header ---------- */
+.site-header { background: var(--navy-950); border-bottom: 1px solid var(--navy-line); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 72px; }
+.brand-logo { height: 42px; width: auto; object-fit: contain; }
+
+/* ---------- Tool hero ---------- */
+.est-hero { background: var(--navy-950); padding: 44px 0 32px; text-align: center; }
+.est-hero h1 { color: #fff; font-size: clamp(1.7rem, 3vw + 1rem, 2.4rem); margin-bottom: 12px; }
+.est-hero-sub { color: rgba(255,255,255,0.72); max-width: 520px; margin: 0 auto 20px; }
+.powered-line {
+  display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.74rem;
+  letter-spacing: 0.05em; color: var(--copper-light); border: 1px solid var(--navy-line);
+  border-radius: 20px; padding: 8px 16px;
+}
+.powered-line a { color: #fff; border-bottom: 1px solid var(--copper); }
+.powered-line a:hover { color: var(--copper-light); }
+
+.trust-strip { background: var(--navy-900); padding: 14px 0; border-top: 1px solid var(--navy-line); }
+.trust-strip-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 36px; }
+.trust-badge { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+
+/* ---------- Form shell ---------- */
+main { background: var(--paper-soft); padding: 40px 0 60px; }
+.card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px; margin-bottom: 18px;
+}
+.card h2 {
+  font-family: var(--mono); font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--copper-deep); margin: 0 0 18px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; align-items: end; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); min-height: 18px; }
+.form-group input, .form-group select {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 2px; color: var(--ink);
+  padding: 11px 12px; font-family: var(--sans); font-size: 0.95rem; height: 44px; width: 100%;
+}
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23545B68' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; padding-right: 34px;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--copper); outline: none; }
+.form-group input::placeholder { color: var(--ink-faint); }
+.field-hint { font-size: 0.78rem; color: var(--ink-faint); margin: -8px 0 4px; }
+
+.checkbox-row {
+  display: flex; align-items: center; gap: 12px; padding: 12px 0; font-size: 0.92rem;
+  font-weight: 500; color: var(--ink); border-bottom: 1px dashed var(--line);
+}
+.checkbox-row:last-of-type { border-bottom: none; }
+.checkbox-row input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--copper); cursor: pointer; flex: 0 0 auto; }
+
+/* ---------- Submit / status ---------- */
+.submit-note { font-size: 0.8rem; color: var(--ink-faint); text-align: center; margin: 12px 0 0; }
+.error-msg, .warning-banner {
+  border-radius: 2px; padding: 12px 14px; font-size: 0.86rem; margin-bottom: 14px; display: none;
+}
+.error-msg { color: #A83D2E; background: rgba(196,82,64,0.08); border: 1px solid rgba(196,82,64,0.28); }
+.warning-banner { color: var(--copper-deep); background: rgba(185,137,90,0.1); border: 1px solid rgba(185,137,90,0.3); }
+
+/* ---------- Results ---------- */
+.results-section { display: none; opacity: 0; transition: opacity 0.4s var(--ease); }
+.results-section.visible { display: block; opacity: 1; }
+.quote-id-badge {
+  font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.05em; color: var(--copper-deep);
+  background: rgba(185,137,90,0.1); border: 1px solid rgba(185,137,90,0.3); border-radius: 20px;
+  padding: 6px 14px; display: inline-block; margin-bottom: 18px;
+}
+.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
+.price-card { background: var(--navy-950); border-radius: var(--radius); padding: 18px 12px; text-align: center; }
+.price-card h3 { margin: 0 0 8px; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-family: var(--mono); font-weight: 500; }
+.price-card .amount { font-size: clamp(1.15rem, 2.2vw, 1.5rem); font-weight: 700; color: var(--copper-light); font-family: var(--display); }
+
+.breakdown-accordion { background: var(--paper-soft); border: 1px solid var(--line); border-radius: 2px; padding: 14px 16px; margin-top: 18px; }
+.breakdown-accordion summary { font-weight: 700; font-size: 0.88rem; color: var(--copper-deep); cursor: pointer; }
+.breakdown-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.86rem; }
+.breakdown-table td { padding: 9px 0; border-bottom: 1px dashed var(--line); color: var(--ink-soft); }
+.breakdown-table td:last-child { text-align: right; font-weight: 700; color: var(--ink); }
+
+.sticky-summary {
+  position: sticky; bottom: 14px; background: var(--navy-950); border: 1px solid var(--copper);
+  border-radius: var(--radius); padding: 12px 16px; display: none; justify-content: space-around;
+  align-items: center; gap: 10px; margin-top: 20px; box-shadow: 0 12px 30px rgba(0,0,0,0.3); z-index: 20;
+}
+.sticky-summary.visible { display: flex; }
+.sticky-val { text-align: center; }
+.sticky-val div { font-size: 0.66rem; color: rgba(255,255,255,0.55); text-transform: uppercase; font-family: var(--mono); }
+.sticky-val strong { font-size: 0.95rem; color: var(--copper-light); font-family: var(--display); }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--navy-950); padding: 32px 0; text-align: center; }
+.site-footer p { color: rgba(255,255,255,0.55); font-size: 0.8rem; margin: 0 0 8px; }
+.site-footer a { color: var(--copper-light); }
+.site-footer a:hover { color: #fff; }
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .price-grid { grid-template-columns: 1fr; }
+  .sticky-summary { flex-direction: column; gap: 6px; }
+  .header-inner { height: 64px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="https://newoodmillwork.com/" aria-label="Newood Millwork home">
+      <img src="https://newoodmillwork.com/assets/brand/logo.png" alt="Newood Millwork" class="brand-logo">
+    </a>
+    <a href="https://newoodmillwork.com/" class="btn-ghost">&larr; Back to newoodmillwork.com</a>
+  </div>
+</header>
+
+<section class="est-hero">
+  <div class="wrap">
+    <p class="eyebrow">FREE TOOL</p>
+    <h1>Free Kitchen Estimator</h1>
+    <p class="est-hero-sub">Answer a few questions about your kitchen and get an instant budget range across three finish levels — no obligation, no sales call required.</p>
+    <p class="powered-line">Powered by <a href="https://newoodmillwork.com/" target="_blank" rel="noopener">Newood Millwork Inc</a></p>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap trust-strip-inner">
+    <span class="trust-badge">Lifetime Warranty</span>
+    <span class="trust-badge">Made in Canada</span>
+    <span class="trust-badge">Concord, Ontario</span>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <form id="estimatorForm" novalidate>
+      <!-- Hidden: this tool doubles as an internal sales aid, so we keep the
+           field in the payload for backend compatibility, but a public
+           visitor has no sales rep to name, so it isn't shown to them. -->
+      <input type="hidden" id="sales_rep" value="Website — Free Estimator">
+
+      <section class="card">
+        <h2>1. Your Details &amp; Kitchen Layout</h2>
+        <div class="grid" style="margin-bottom: 16px;">
+          <div class="form-group">
+            <label for="client_name">Your Name *</label>
+            <input type="text" id="client_name" placeholder="e.g. John Doe" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="client_phone">Your Phone</label>
+            <input type="tel" id="client_phone" placeholder="(289) 000-0000" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="project_address">Project Address</label>
+            <input type="text" id="project_address" placeholder="City or full address" autocomplete="street-address">
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="form-group">
+            <label for="shape">Kitchen Shape</label>
+            <select id="shape">
+              <option value="straight" selected>Straight Wall</option>
+              <option value="l_shaped">L-Shaped</option>
+              <option value="u_shaped">U-Shaped</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ceiling_height">Ceiling Height</label>
+            <select id="ceiling_height">
+              <option value="8ft" selected>2.4 m / 8 ft</option>
+              <option value="9ft">2.7 m / 9 ft</option>
+              <option value="10ft">3.0 m / 10 ft</option>
+            </select>
+          </div>
+          <div class="form-group" id="group_wall1">
+            <label for="wall1_lf">Wall 1 Length (ft)</label>
+            <input type="number" id="wall1_lf" value="12" min="0" max="200" inputmode="decimal">
+          </div>
+          <div class="form-group" id="group_wall2" style="display: none;">
+            <label for="wall2_lf">Wall 2 Length (ft)</label>
+            <input type="number" id="wall2_lf" value="8" min="0" max="200" inputmode="decimal">
+          </div>
+          <div class="form-group" id="group_wall3" style="display: none;">
+            <label for="wall3_lf">Wall 3 Length (ft)</label>
+            <input type="number" id="wall3_lf" value="8" min="0" max="200" inputmode="decimal">
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>2. Appliance Layout</h2>
+        <div class="checkbox-row">
+          <input type="checkbox" id="has_fridge" checked>
+          <label for="has_fridge">Include refrigerator space (36" standard)</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="has_dishwasher" checked>
+          <label for="has_dishwasher">Include dishwasher (24" standard)</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="has_bev_cooler">
+          <label for="has_bev_cooler">Include beverage cooler (24")</label>
+        </div>
+        <div class="grid" style="margin-top: 14px;">
+          <div class="form-group">
+            <label for="cooking_style">Cooking Appliance</label>
+            <select id="cooking_style">
+              <option value="freestanding" selected>Freestanding Range (30")</option>
+              <option value="cooktop">Built-In Cooktop (30")</option>
+              <option value="none">None / Exclude</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pantries_count">Tall Pantry Cabinets</label>
+            <select id="pantries_count">
+              <option value="0" selected>0 Pantries</option>
+              <option value="1">1 Pantry (30")</option>
+              <option value="2">2 Pantries (60")</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>3. Style &amp; Countertops</h2>
+        <div class="grid">
+          <div class="form-group">
+            <label for="package_tier">Hardware &amp; Trim Package</label>
+            <select id="package_tier">
+              <option value="essential">Essential (Standard Soft-Close)</option>
+              <option value="standard" selected>Standard (Crown + Valance)</option>
+              <option value="luxury">Luxury (Stacked Crown + Premium Trim)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="countertop_mat">Countertop</label>
+            <select id="countertop_mat">
+              <option value="none">None / Exclude</option>
+              <option value="laminate">Laminate</option>
+              <option value="quartz" selected>Quartz Composite Stone</option>
+              <option value="granite">Granite Stone</option>
+              <option value="porcelain">Porcelain Slab</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>4. Delivery, Install &amp; Tax</h2>
+        <p class="field-hint">Defaults are typical for a GTA installation — adjust if you already have numbers in mind.</p>
+        <div class="grid">
+          <div class="form-group">
+            <label for="delivery_fee">Delivery ($)</label>
+            <input type="number" id="delivery_fee" value="200" min="0" max="10000" inputmode="decimal">
+          </div>
+          <div class="form-group">
+            <label for="install_fee">Install ($)</label>
+            <input type="number" id="install_fee" value="0" min="0" max="50000" inputmode="decimal">
+          </div>
+          <div class="form-group">
+            <label for="tax_rate">Tax (%)</label>
+            <input type="number" id="tax_rate" value="13" min="0" max="50" inputmode="decimal">
+          </div>
+          <div class="form-group">
+            <label for="markup_rate">Markup (%)</label>
+            <input type="number" id="markup_rate" value="10" min="0" max="200" inputmode="decimal">
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div id="errorBox" class="error-msg" role="alert" aria-live="assertive"></div>
+        <div id="warningBanner" class="warning-banner" role="status" aria-live="polite"></div>
+        <button type="submit" id="submitBtn" class="btn-primary">Get My Free Estimate</button>
+        <p class="submit-note">Takes about 60 seconds. No obligation — we'll only follow up if you ask us to.</p>
+      </section>
+
+      <section class="card results-section" id="resultsSection" aria-live="polite">
+        <div style="text-align: center;">
+          <span class="quote-id-badge" id="quoteIdBadge">NW-QUOTE-000</span>
+        </div>
+        <h2 style="border:none; padding:0; margin-bottom:16px;">Estimated Renovation Cost</h2>
+        <div class="price-grid">
+          <article class="price-card">
+            <h3>Slab Finish</h3>
+            <div class="amount" id="outSlab">$0.00</div>
+          </article>
+          <article class="price-card">
+            <h3>Thermofoil</h3>
+            <div class="amount" id="outThermo">$0.00</div>
+          </article>
+          <article class="price-card">
+            <h3>Painted Finish</h3>
+            <div class="amount" id="outPaint">$0.00</div>
+          </article>
+        </div>
+        <details class="breakdown-accordion">
+          <summary>View detailed cost breakdown</summary>
+          <table class="breakdown-table">
+            <tbody>
+              <tr><td>Cabinet Boxes &amp; Shells</td><td id="bd_boxes">$0.00</td></tr>
+              <tr><td>Hardware &amp; Trim Package</td><td id="bd_hardware">$0.00</td></tr>
+              <tr><td>Countertops Package</td><td id="bd_countertop">$0.00</td></tr>
+              <tr><td>Delivery</td><td id="bd_delivery">$0.00</td></tr>
+              <tr><td>Install</td><td id="bd_installation">$0.00</td></tr>
+              <tr><td>Tax</td><td id="bd_tax">$0.00</td></tr>
+            </tbody>
+          </table>
+        </details>
+        <p class="submit-note" style="margin-top:20px;">Like what you see? <a href="https://newoodmillwork.com/index.html#contact" target="_blank" rel="noopener" style="color:var(--copper-deep); font-weight:600;">Talk to our team &rarr;</a></p>
+      </section>
+    </form>
+
+    <div class="sticky-summary" id="stickySummary">
+      <div class="sticky-val"><div>Slab</div><strong id="stkSlab">$0.00</strong></div>
+      <div class="sticky-val"><div>Thermofoil</div><strong id="stkThermo">$0.00</strong></div>
+      <div class="sticky-val"><div>Painted</div><strong id="stkPaint">$0.00</strong></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Powered by <a href="https://newoodmillwork.com/" target="_blank" rel="noopener">Newood Millwork Inc</a> &middot; Custom cabinetry built in Concord, Ontario</p>
+    <p>&copy; 2026 Newood Millwork Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+
+  const FIELDS = [
+    'shape', 'ceiling_height', 'wall1_lf', 'wall2_lf', 'wall3_lf',
+    'cooking_style', 'pantries_count', 'package_tier', 'countertop_mat',
+    'delivery_fee', 'install_fee', 'tax_rate', 'markup_rate',
+    'sales_rep', 'client_name', 'client_phone', 'project_address'
+  ];
+
+  let hasGeneratedQuote = false;
+  let debounceTimer = null;
+
+  const $ = id => document.getElementById(id);
+
+  const debounce = (fn, delay = 250) => (...args) => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => fn.apply(null, args), delay);
+  };
+
+  const showError = (msg) => {
+    const box = $('errorBox');
+    box.textContent = msg;
+    box.style.display = 'block';
+  };
+
+  const clearError = () => {
+    const box = $('errorBox');
+    box.textContent = '';
+    box.style.display = 'none';
+  };
+
+  const renderWarnings = (warnings) => {
+    const banner = $('warningBanner');
+    if (warnings && warnings.length > 0) {
+      banner.textContent = warnings.join(' | ');
+      banner.style.display = 'block';
+    } else {
+      banner.textContent = '';
+      banner.style.display = 'none';
+    }
+  };
+
+  const getVal = (id) => {
+    const el = $(id);
+    if (!el) return 0;
+    if (el.tagName === 'SELECT') return el.value;
+    if (el.type === 'number') {
+      const val = parseFloat(el.value);
+      return isNaN(val) ? 0 : Math.max(0, val);
+    }
+    return el.value;
+  };
+
+  const fmt = (val) => '$' + Number(val).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  const buildPayload = () => {
+    const payload = FIELDS.reduce((acc, f) => ({ ...acc, [f]: getVal(f) }), {});
+    payload.has_fridge = $('has_fridge').checked;
+    payload.has_dishwasher = $('has_dishwasher').checked;
+    payload.has_bev_cooler = $('has_bev_cooler').checked;
+    return payload;
+  };
+
+  const toggleWallInputs = () => {
+    const shape = $('shape').value;
+    const w2 = $('group_wall2');
+    const w3 = $('group_wall3');
+
+    w2.style.display = shape === 'straight' ? 'none' : 'flex';
+    w3.style.display = shape === 'u_shaped' ? 'flex' : 'none';
+
+    if (hasGeneratedQuote) recalculateQuote();
+  };
+
+  const updateUIResults = (data) => {
+    const slab = fmt(data.slab_quote);
+    const thermo = fmt(data.thermo_quote);
+    const paint = fmt(data.paint_quote);
+
+    $('outSlab').textContent = slab;
+    $('outThermo').textContent = thermo;
+    $('outPaint').textContent = paint;
+    $('stkSlab').textContent = slab;
+    $('stkThermo').textContent = thermo;
+    $('stkPaint').textContent = paint;
+
+    if (data.breakdown) {
+      $('bd_boxes').textContent = fmt(data.breakdown.boxes);
+      $('bd_hardware').textContent = fmt(data.breakdown.hardware);
+      $('bd_countertop').textContent = fmt(data.breakdown.countertop);
+      $('bd_delivery').textContent = fmt(data.breakdown.delivery);
+      $('bd_installation').textContent = fmt(data.breakdown.installation);
+      $('bd_tax').textContent = fmt(data.breakdown.tax);
+    }
+  };
+
+  const recalculateQuote = async () => {
+    if (!hasGeneratedQuote) return;
+    clearError();
+
+    try {
+      const res = await fetch('/api/calculate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(buildPayload())
+      });
+      const data = await res.json();
+
+      if (!res.ok || data.status === 'error') {
+        showError(data.message || 'Calculation error.');
+        return;
+      }
+      renderWarnings(data.warnings);
+      updateUIResults(data);
+    } catch (err) {
+      showError('Connection error. Could not recalculate.');
+    }
+  };
+
+  const submitLead = async () => {
+    clearError();
+    const clientName = $('client_name').value.trim();
+    const btn = $('submitBtn');
+
+    if (!clientName) {
+      showError('Please enter your name so we know who the estimate is for.');
+      $('client_name').focus();
+      return;
+    }
+
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Calculating…';
+
+    try {
+      const res = await fetch('/api/submit-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(buildPayload())
+      });
+      const data = await res.json();
+
+      if (!res.ok || data.status === 'error') {
+        showError(data.message || 'Submission failed. Please try again.');
+        return;
+      }
+
+      hasGeneratedQuote = true;
+      if (data.quote_id) {
+        $('quoteIdBadge').textContent = 'Quote ID: ' + data.quote_id;
+      }
+      renderWarnings(data.warnings);
+      updateUIResults(data);
+
+      $('resultsSection').classList.add('visible');
+      $('stickySummary').classList.add('visible');
+      $('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (err) {
+      showError('Server connection error. Please try again.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
+  };
+
+  const debouncedRecalculate = debounce(recalculateQuote, 250);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = $('estimatorForm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitLead();
+    });
+
+    form.addEventListener('input', (e) => {
+      if (e.target.type === 'number' && e.target.value !== '' && parseFloat(e.target.value) < 0) {
+        e.target.value = 0;
+      }
+      if (hasGeneratedQuote) debouncedRecalculate();
+    });
+
+    form.addEventListener('change', (e) => {
+      if (e.target.id === 'shape') {
+        toggleWallInputs();
+        return;
+      }
+      if (hasGeneratedQuote) recalculateQuote();
+    });
+
+    toggleWallInputs();
+  });
+})();
+</script>
+</body>
+</html>
