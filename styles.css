@@ -256,6 +256,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .footer-copy { flex: 1 1 auto; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.55); margin: 0; }
 .footer-legal-link { color: rgba(255,255,255,0.75); }
 .footer-legal-link:hover { color: var(--copper-light); }
+.footer-credit { text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.4); margin: 10px 0 0; width: 100%; }
+.footer-credit a { color: rgba(255,255,255,0.55); }
+.footer-credit a:hover { color: var(--copper-light); }
 .footer-ig { flex: 0 0 auto; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--navy-line); color: rgba(255,255,255,0.7); border-radius: 50%; transition: border-color 0.2s var(--ease), color 0.2s var(--ease); }
 .footer-ig:hover { border-color: var(--copper); color: var(--copper-light); }
 
