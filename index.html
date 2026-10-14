@@ -26,6 +26,22 @@
 <link rel="preload" as="image" href="assets/brand/logo.png" fetchpriority="high">
 <link rel="stylesheet" href="styles.min.css">
 
+<style>
+.case-study{background:#0f0f0f;color:#f5f5f5;padding:4.5rem 0}
+.case-study-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+.case-study-photo img{width:100%;height:auto;border-radius:12px;display:block}
+.case-study-kicker{color:#d4a24e;letter-spacing:.18em;font-size:.78rem;font-weight:700;margin:0 0 .8rem}
+.case-study h2{font-size:2rem;margin:0 0 1rem;line-height:1.25}
+.case-study p{color:#c9c9c9;line-height:1.75;margin:0 0 1rem}
+.case-study-list{list-style:none;padding:0;margin:1.25rem 0}
+.case-study-list li{padding:.45rem 0 .45rem 1.6rem;position:relative;color:#e8e8e8}
+.case-study-list li::before{content:"✓";position:absolute;left:0;color:#d4a24e;font-weight:700}
+.case-study-meta{display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
+.case-study-meta div span{display:block;font-size:.75rem;letter-spacing:.12em;color:#9a9a9a;margin-bottom:.25rem}
+.case-study-meta div strong{font-size:1.05rem}
+@media(max-width:860px){.case-study-grid{grid-template-columns:1fr}}
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,6 +93,7 @@
   <div class="wrap hero-inner">
     <h1>Custom Millwork Service</h1>
     <p class="hero-slogan">Your One-Stop Shop. We Are The Solution.</p>
+    <p class="hero-sub" style="margin-top:1rem;opacity:.9">You bring the problem — drawings, a tight deadline, a space that needs to work. We design, build, and install the answer, all in-house.</p>
     <div class="hero-actions">
       <a href="index.html#contact" class="btn-primary">Get Your Free Quote</a>
       <a href="index.html#pillars" class="btn-ghost">See Our Work</a>
@@ -120,18 +137,14 @@
             <span class="pillar-link">Explore Kitchens &rarr;</span>
           </div>
         </a>
-        <a href="https://estimator.newoodmillwork.com/" target="_blank" rel="noopener" class="pillar-tool-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
-          Try Our Free Kitchen Estimator &rarr;
-        </a>
       </div>
 
       <a href="commercial.html" class="pillar-card bracket">
-        <div class="pillar-photo"><img src="assets/gallery/commercial-01.webp" alt="Custom private office millwork by Newood Millwork" loading="lazy"></div>
+        <div class="pillar-photo"><img src="assets/gallery/commercial-03.webp" alt="Bakery wall millwork at Food Basket Wholesale Market, Barrie by Newood Millwork" loading="lazy"></div>
         <div class="pillar-body">
           <span class="pillar-num">03 / COMMERCIAL</span>
           <h3>Custom Commercial Millwork</h3>
-          <p>Retail fixtures, café millwork, and more.</p>
+          <p>Supermarket fixtures, retail displays, caf&eacute; millwork, and full store fit-outs.</p>
           <span class="pillar-link">Explore Commercial Millwork &rarr;</span>
         </div>
       </a>
@@ -140,9 +153,35 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS: placeholder cards. Replace the bracketed text in each card
-     once you have real reviews + client permission. Keep it to a real quote,
-     first name + last initial, and city (e.g. "Sarah T., Vaughan"). -->
+<section class="case-study reveal">
+  <div class="wrap">
+    <div class="case-study-grid">
+      <div class="case-study-photo">
+        <img src="assets/gallery/commercial-03.webp" alt="Bakery wall millwork with BAKERY signage at Food Basket Wholesale Market, Barrie — built by Newood Millwork" loading="lazy">
+      </div>
+      <div>
+        <p class="case-study-kicker">FEATURED PROJECT</p>
+        <h2>Food Basket Wholesale Market — Barrie</h2>
+        <p>A full supermarket fit-out at Georgian Mall: bakery walls, display islands, LED-lit glass cases, and checkout counters — every piece designed, built, and installed by our in-house team in Concord.</p>
+        <ul class="case-study-list">
+          <li>Bakery wall units with integrated signage</li>
+          <li>Freestanding display islands</li>
+          <li>Glass display cases with LED lighting</li>
+          <li>Checkout counter runs</li>
+        </ul>
+        <div class="case-study-meta">
+          <div><span>LOCATION</span><strong>Barrie, Ontario</strong></div>
+          <div><span>OPENED</span><strong>October 2026</strong></div>
+          <div><span>SCOPE</span><strong>Full store millwork</strong></div>
+        </div>
+        <div class="hero-actions" style="margin-top:1.5rem">
+          <a href="commercial.html" class="btn-primary">See the full project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="testimonials" class="testimonials reveal">
   <div class="wrap">
     <p class="eyebrow">WHAT CLIENTS SAY</p>
