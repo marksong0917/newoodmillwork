@@ -48,6 +48,8 @@ Site by [Yorkregionwebstudio.com](https://yorkregionwebstudio.com).
 
 ## ✏️ Making Changes
 
+> **Current state (verified Oct 19, 2026):** only the minified builds (`styles.min.css`, `script.min.js`) are tracked in this repo — the unminified sources described below are **not** currently committed. Until the sources are restored and committed, edit the minified files directly.
+
 `styles.css` and `script.js` are the source files — edit those. Every page loads the **minified** versions (`styles.min.css`, `script.min.js`), so after editing a source file, regenerate its minified build before pushing:
 
 ```bash
