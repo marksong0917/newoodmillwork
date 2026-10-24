@@ -808,6 +808,16 @@ textarea:focus-visible {
 .nw-faq {
   padding: var(--section-pad) 0;
 }
+
+/* About (homepage section) */
+.nw-about {
+  padding: var(--section-pad) 0;
+}
+.nw-about-text {
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 46rem;
+}
 .faq-item {
   border-bottom: 1px solid var(--line);
   padding: 1.05rem 0;
