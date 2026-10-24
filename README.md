@@ -48,7 +48,7 @@ Site by [Yorkregionwebstudio.com](https://yorkregionwebstudio.com).
 
 ## ✏️ Making Changes
 
-> **Current state (verified Oct 19, 2026):** only the minified builds (`styles.min.css`, `script.min.js`) are tracked in this repo — the unminified sources described below are **not** currently committed. Until the sources are restored and committed, edit the minified files directly.
+> **Current state (updated Oct 24, 2026):** the unminified sources (`styles.css`, `script.js`) **are** committed and are the sources of truth — they were reconstructed from the minified builds when the Studio Design System v1 was implemented. Never edit the minified builds by hand.
 
 `styles.css` and `script.js` are the source files — edit those. Every page loads the **minified** versions (`styles.min.css`, `script.min.js`), so after editing a source file, regenerate its minified build before pushing:
 
@@ -58,6 +58,8 @@ npx terser script.js -o script.min.js --compress --mangle
 ```
 
 If you forget this step, your edits to the source files simply won't show up on the live site, since the pages don't load them directly.
+
+**Cache version rule:** every page references the builds with a version query (`styles.min.css?v=ds1`, `script.min.js?v=ds1` — `ds1` = Design System v1). On any style/script change, bump the `?v=` value in all pages along with the rebuild, so returning visitors never sit on a stale cached file.
 
 ## 🖼️ Image Notes
 

@@ -29,23 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/hero/hero-kitchen.webp" fetchpriority="high">
 <link rel="preload" as="image" href="assets/brand/logo.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.min.css">
-
-<style>
-.case-study{background:#0f0f0f;color:#f5f5f5;padding:4.5rem 0}
-.case-study-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
-.case-study-photo img{width:100%;height:auto;border-radius:12px;display:block}
-.case-study-kicker{color:#d4a24e;letter-spacing:.18em;font-size:.78rem;font-weight:700;margin:0 0 .8rem}
-.case-study h2{font-size:2rem;margin:0 0 1rem;line-height:1.25}
-.case-study p{color:#c9c9c9;line-height:1.75;margin:0 0 1rem}
-.case-study-list{list-style:none;padding:0;margin:1.25rem 0}
-.case-study-list li{padding:.45rem 0 .45rem 1.6rem;position:relative;color:#e8e8e8}
-.case-study-list li::before{content:"✓";position:absolute;left:0;color:#d4a24e;font-weight:700}
-.case-study-meta{display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
-.case-study-meta div span{display:block;font-size:.75rem;letter-spacing:.12em;color:#9a9a9a;margin-bottom:.25rem}
-.case-study-meta div strong{font-size:1.05rem}
-@media(max-width:860px){.case-study-grid{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="styles.min.css?v=ds1">
 
 <script type="application/ld+json">
 {
@@ -124,14 +108,8 @@
 }
 </script>
 
-<style>
-.nw-detail{padding:4.5rem 0;border-top:1px solid #e8e8e8}
-.nw-video{width:100%;height:auto;border-radius:12px;display:block;background:#0f0f0f}
-.nw-note{margin-top:.75rem;color:#777;font-size:.9rem}
-.nw-cta-line{margin-top:1.25rem}
-</style>
 </head>
-<body>
+<body id="top">
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="site-header">
@@ -154,7 +132,7 @@
   </div>
 </header>
 
-<section id="main-content" id="top" class="hero">
+<section id="main-content" class="hero">
   <div class="hero-media"></div>
   <div class="hero-scrim"></div>
   <div class="wrap hero-inner">
@@ -424,7 +402,7 @@
   <a href="index.html#contact" class="mobile-cta-quote">Contact Us</a>
 </div>
 
-<script src="script.min.js"></script>
+<script src="script.min.js?v=ds1"></script>
 <script>
 (function(){var t=new URLSearchParams(window.location.search).get('type');if(!t)return;var s=document.getElementById('qType');if(!s)return;for(var i=0;i<s.options.length;i++){if(s.options[i].value===t){s.selectedIndex=i;break;}}})();
 </script>
