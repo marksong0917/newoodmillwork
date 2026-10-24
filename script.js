@@ -143,7 +143,7 @@ if (quoteForm) {
     formStatus.hidden = true;
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/info@newoodmillwork.com",
+        "https://crm.newoodmillwork.com/api/intake/website/",
         {
           method: "POST",
           headers: {
@@ -151,7 +151,11 @@ if (quoteForm) {
             Accept: "application/json",
           },
           body: JSON.stringify(
-            Object.fromEntries(new FormData(quoteForm).entries()),
+            Object.fromEntries(
+              [...new FormData(quoteForm).entries()].filter(
+                ([key]) => !key.startsWith("_"),
+              ),
+            ),
           ),
         },
       );
@@ -188,3 +192,23 @@ mainNav.querySelectorAll("a").forEach((link) => {
     navToggle.setAttribute("aria-expanded", "false");
   });
 });
+
+/* --------------------------------------------------------------------------
+   Visit beacon — cookieless first-party stats to the Hub, the same
+   beacon the Hub-generated sites carry (path + referrer host only).
+   -------------------------------------------------------------------------- */
+(function () {
+  try {
+    var d = JSON.stringify({
+      token: "Vc2Y9680nthOSe3oV2g6rh1pvRd0QIo-ItruNn--xMA",
+      path: location.pathname,
+      ref: document.referrer || "",
+    });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(
+        "https://crm.newoodmillwork.com/api/website/hit/",
+        new Blob([d], { type: "text/plain" }),
+      );
+    }
+  } catch (e) {}
+})();

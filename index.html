@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/hero/hero-kitchen.webp" fetchpriority="high">
 <link rel="preload" as="image" href="assets/brand/logo.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.min.css?v=ds4">
+<link rel="stylesheet" href="styles.min.css?v=ds5">
 
 <script type="application/ld+json">
 {
@@ -277,11 +277,9 @@
 
       <div class="contact-card">
         <h3>Send a Direct Message</h3>
-        <form id="quoteForm" novalidate action="https://formsubmit.co/info@newoodmillwork.com" method="POST">
+        <form id="quoteForm" novalidate action="https://crm.newoodmillwork.com/api/intake/website/" method="POST">
           <input type="hidden" name="_subject" value="New project inquiry — Newood Millwork website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://newoodmillwork.com/index.html#contact">
+          <input type="hidden" name="token" value="Vc2Y9680nthOSe3oV2g6rh1pvRd0QIo-ItruNn--xMA">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-field">
             <label for="qName">Your Name</label>
@@ -360,7 +358,7 @@
   <a href="index.html#contact" class="mobile-cta-quote">Free Consultation</a>
 </div>
 
-<script src="script.min.js?v=ds3"></script>
+<script src="script.min.js?v=ds5"></script>
 <script>
 (function(){var t=new URLSearchParams(window.location.search).get('type');if(!t)return;var s=document.getElementById('qType');if(!s)return;for(var i=0;i<s.options.length;i++){if(s.options[i].value===t){s.selectedIndex=i;break;}}})();
 </script>

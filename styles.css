@@ -102,6 +102,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
   overflow-x: hidden;
 }
 body {
@@ -224,7 +225,6 @@ textarea:focus-visible {
   border-bottom: 2px solid var(--copper);
   border-right: 2px solid var(--copper);
 }
-.btn-call,
 .btn-ghost,
 .btn-primary {
   display: inline-flex;
@@ -261,18 +261,7 @@ textarea:focus-visible {
   border-color: var(--copper);
   color: var(--copper-light);
 }
-.btn-call {
-  padding: 10px 18px;
-  font-size: var(--text-small);
-  background: 0 0;
-  border: 1px solid var(--copper);
-  color: var(--copper);
-  flex: 0 0 auto;
-}
-.btn-call:hover {
-  background: var(--copper);
-  color: var(--navy-950);
-}
+
 
 /* --------------------------------------------------------------------------
    Header / Nav
@@ -595,38 +584,6 @@ textarea:focus-visible {
   justify-content: center;
 }
 
-/* --------------------------------------------------------------------------
-   Testimonials
-   -------------------------------------------------------------------------- */
-.testimonials {
-  padding: var(--section-pad) 0;
-}
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 32px;
-}
-.testimonial-card {
-  border: 1px solid var(--line);
-  padding: var(--card-pad);
-}
-.testimonial-stars {
-  font-size: var(--text-small);
-  color: var(--copper);
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-.testimonial-quote {
-  font-size: var(--text-body);
-  color: var(--ink);
-}
-.testimonial-attribution {
-  font-family: var(--mono);
-  font-size: var(--text-eyebrow);
-  color: var(--ink-faint);
-  margin: 0;
-}
 .reviews-more {
   margin-top: 1.75rem;
   text-align: center;
@@ -767,32 +724,7 @@ textarea:focus-visible {
 .nw-list li:first-child {
   padding-top: 0;
 }
-.nw-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-.nw-step span {
-  font-family: var(--mono);
-  font-size: var(--text-eyebrow);
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
-}
-.nw-step h3 {
-  margin: 0.4rem 0 0.35rem;
-}
-.nw-step p {
-  margin: 0;
-  line-height: 1.55;
-}
-.nw-video {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-  display: block;
-  background: var(--brand-dark);
-}
+
 .nw-note {
   margin-top: 0.75rem;
   color: var(--ink-faint);
@@ -1158,11 +1090,6 @@ textarea:focus-visible {
   color: var(--on-dark-82);
   margin: 0 0 6px;
 }
-.footer-areas {
-  font-size: var(--text-eyebrow);
-  color: var(--on-dark-55);
-  margin: 0;
-}
 .footer-serving {
   font-size: var(--text-eyebrow);
   color: var(--on-dark-55);
@@ -1182,6 +1109,8 @@ textarea:focus-visible {
 .footer-links a {
   font-size: var(--text-small);
   color: var(--on-dark-72);
+  display: inline-block;
+  padding: 5px 0;
 }
 .footer-links a:hover {
   color: var(--copper-light);
@@ -1264,6 +1193,8 @@ textarea:focus-visible {
   color: var(--on-dark-55);
   text-decoration: none;
   transition: color 0.2s var(--ease);
+  display: inline-block;
+  padding: 5px 0;
 }
 .legal-links a:hover {
   color: var(--on-dark);
@@ -1288,25 +1219,19 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
   .case-study-grid {
     grid-template-columns: 1fr;
   }
   .nw-cols {
     grid-template-columns: 1fr;
   }
-  .nw-steps {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 @media (max-width: 760px) {
+  html {
+    scroll-padding-top: 84px;
+  }
   .header-inner {
     height: 64px;
-  }
-  .btn-call {
-    display: none;
   }
   .nav-toggle {
     display: flex;
