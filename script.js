@@ -162,7 +162,7 @@ if (quoteForm) {
       if (!response.ok) throw new Error("Request failed");
       quoteForm.hidden = true;
       setFormStatus(
-        "Thanks — your message is on its way. We'll get back to you within 1–2 business days.",
+        "Thanks — we've received it. We reply within one business day.",
         "success",
       );
     } catch (error) {
