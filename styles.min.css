@@ -14,3 +14,13 @@
 .faq-item p{margin:.6rem 0 0;color:var(--ink-soft);line-height:1.65;max-width:46rem}
 .reviews-more{margin-top:1.75rem;text-align:center;color:var(--ink-soft)}
 .reviews-more a{color:var(--copper-deep);font-weight:600}
+
+/* Legal bar (SymLink-style, Ontario-adapted) */
+.legal-bar{background:#04070d;border-top:1px solid rgba(255,255,255,.08);padding:14px 20px}
+.legal-bar-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 32px}
+.legal-copy{margin:0;font-size:.75rem;color:rgba(255,255,255,.55)}
+.legal-links{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;font-size:.75rem}
+.legal-links a{color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s ease}
+.legal-links a:hover{color:#fff;text-decoration:underline}
+.legal-loc{color:rgba(255,255,255,.38)}
+@media (max-width:640px){.legal-bar-inner{flex-direction:column;text-align:center}.legal-links{justify-content:center}}
