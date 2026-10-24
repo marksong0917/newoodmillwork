@@ -1158,8 +1158,8 @@ textarea:focus-visible {
   color: var(--on-dark-55);
 }
 .maple-icon {
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   flex: none;
   vertical-align: -2px;
 }
