@@ -1350,3 +1350,39 @@ textarea:focus-visible {
     justify-content: center;
   }
 }
+
+/* ── Starting prices ─────────────────────────────────────────────── */
+.pillar-from {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.start-prices {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.start-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  margin-bottom: 10px;
+}
+.start-price-config {
+  font-size: var(--text-lead);
+  font-weight: 600;
+  color: var(--navy-950);
+}
+.start-price-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-lead);
+  color: var(--navy-950);
+}
+.start-prices-note {
+  font-size: var(--text-small);
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
