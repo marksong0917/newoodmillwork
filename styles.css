@@ -342,6 +342,7 @@ textarea:focus-visible {
   position: absolute;
   inset: 0;
   background: var(--navy-950) url("assets/hero/hero-kitchen.webp") center 30% / cover no-repeat;
+  background-image: image-set(url("assets/hero/hero-kitchen.avif") type("image/avif"), url("assets/hero/hero-kitchen.webp") type("image/webp"));
 }
 .hero-scrim {
   position: absolute;
@@ -395,6 +396,49 @@ textarea:focus-visible {
   gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 28px;
+}
+.hero-proof {
+  color: var(--copper-light);
+  font-size: var(--text-small);
+  letter-spacing: 0.02em;
+  max-width: 560px;
+  opacity: 0.92;
+}
+
+/* Guide capture (homepage) */
+.nw-guide {
+  padding: var(--section-pad) 0;
+  background: var(--paper-soft);
+}
+.nw-guide-lead {
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 46rem;
+}
+.nw-guide .guide-form {
+  max-width: 560px;
+  margin-top: 1.5rem;
+}
+.nw-guide .form-field {
+  margin-bottom: 1rem;
+}
+.nw-guide .form-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.nw-guide .form-field input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.nw-guide .form-note {
+  color: var(--ink-soft);
+  font-size: var(--text-small);
+  margin-top: 0.9rem;
 }
 
 /* --------------------------------------------------------------------------
