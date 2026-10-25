@@ -397,14 +397,6 @@ textarea:focus-visible {
   flex-wrap: wrap;
   margin-bottom: 28px;
 }
-.hero-proof {
-  color: var(--copper-light);
-  font-size: var(--text-small);
-  letter-spacing: 0.02em;
-  max-width: 560px;
-  opacity: 0.92;
-}
-
 /* Guide capture (homepage) */
 .nw-guide {
   padding: var(--section-pad) 0;
