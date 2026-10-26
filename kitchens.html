@@ -27,7 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/hero/hero-kitchen.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero/hero-kitchen.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero/hero-kitchen.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="styles.min.css?v=ds5">
 
 <script type="application/ld+json">
@@ -65,7 +66,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a href="index.html" class="brand">
-      <img src="assets/brand/logo.webp" alt="Newood Millwork" class="brand-logo" width="180" height="101">
+      <picture><source type="image/avif" srcset="assets/brand/logo.avif"><img src="assets/brand/logo.webp" alt="Newood Millwork" class="brand-logo" width="180" height="101"></picture>
     </a>
     <nav class="main-nav" id="mainNav">
       <a href="index.html">Home</a>
@@ -80,7 +81,7 @@
 </header>
 
 <section id="main-content" class="hero">
-  <div class="hero-media" style="background-image:url('assets/hero/hero-kitchen.webp')"></div>
+  <div class="hero-media" style="background-image:image-set(url('assets/hero/hero-kitchen.avif') type('image/avif'), url('assets/hero/hero-kitchen.webp') type('image/webp'))"></div>
   <div class="hero-scrim"></div>
   <a href="index.html" class="hero-breadcrumb">&larr; Back to home</a>
   <div class="wrap hero-inner">
@@ -117,14 +118,14 @@
       <h2>A few kitchens we've built</h2>
     </div>
     <div class="simple-grid">
-      <figure class="work-item bracket"><img src="assets/gallery/kitchen-01.webp" alt="Custom kitchen with dramatic waterfall marble backsplash by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-01-480.webp 480w, assets/gallery/kitchen-01.webp 1000w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="1000" height="750" decoding="async"><figcaption>Waterfall marble backsplash and island.</figcaption></figure>
-      <figure class="work-item bracket"><img src="assets/gallery/kitchen-02.webp" alt="Custom kitchen with black pendant lighting and waterfall island by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-02-480.webp 480w, assets/gallery/kitchen-02.webp 1000w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="1000" height="750" decoding="async"><figcaption>Waterfall island with black pendant lighting.</figcaption></figure>
-      <figure class="work-item bracket"><img src="assets/gallery/kitchen-03.webp" alt="Custom kitchen with marble waterfall island by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-03-480.webp 480w, assets/gallery/kitchen-03.webp 900w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="900" height="1600" decoding="async"><figcaption>Marble waterfall island, full-height cabinetry.</figcaption></figure>
-      <figure class="work-item bracket"><img src="assets/gallery/kitchen-04.webp" alt="Custom white kitchen with pendant lighting by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-04-480.webp 480w, assets/gallery/kitchen-04.webp 900w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="900" height="900" decoding="async"><figcaption>White kitchen with pendant lighting.</figcaption></figure>
-      <figure class="work-item bracket"><img src="assets/gallery/vanity-01.webp" alt="Custom wood-tone double bathroom vanity by Newood Millwork" loading="lazy" srcset="assets/gallery/vanity-01-480.webp 480w, assets/gallery/vanity-01.webp 900w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="900" height="1200" decoding="async"><figcaption>Wood-tone double bathroom vanity.</figcaption></figure>
-      <figure class="work-item bracket"><img src="assets/gallery/vanity-02.webp" alt="Custom navy double bathroom vanity with brass hardware by Newood Millwork" loading="lazy" srcset="assets/gallery/vanity-02-480.webp 480w, assets/gallery/vanity-02.webp 900w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="900" height="1200" decoding="async"><figcaption>Navy double vanity with brass hardware.</figcaption></figure>
-      <figure class="work-item bracket"><img src="assets/gallery/kitchen-09.webp" alt="Custom navy kitchen cabinetry by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-09-480.webp 480w, assets/gallery/kitchen-09.webp 1000w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="1000" height="1333" decoding="async"><figcaption>Navy kitchen cabinetry.</figcaption></figure>
-      <figure class="work-item bracket"><img src="assets/gallery/kitchen-10.webp" alt="Custom dark wood kitchen by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-10-480.webp 480w, assets/gallery/kitchen-10.webp 1000w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="1000" height="750" decoding="async"><figcaption>Dark wood kitchen.</figcaption></figure>
+      <figure class="work-item bracket"><picture><source type="image/avif" srcset="assets/gallery/kitchen-01-480.avif 480w, assets/gallery/kitchen-01.avif 1000w"><img src="assets/gallery/kitchen-01.webp" alt="Custom kitchen with dramatic waterfall marble backsplash by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-01-480.webp 480w, assets/gallery/kitchen-01.webp 1000w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="1000" height="750" decoding="async"></picture><figcaption>Waterfall marble backsplash and island.</figcaption></figure>
+      <figure class="work-item bracket"><picture><source type="image/avif" srcset="assets/gallery/kitchen-02-480.avif 480w, assets/gallery/kitchen-02.avif 1000w"><img src="assets/gallery/kitchen-02.webp" alt="Custom kitchen with black pendant lighting and waterfall island by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-02-480.webp 480w, assets/gallery/kitchen-02.webp 1000w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="1000" height="750" decoding="async"></picture><figcaption>Waterfall island with black pendant lighting.</figcaption></figure>
+      <figure class="work-item bracket"><picture><source type="image/avif" srcset="assets/gallery/kitchen-03-480.avif 480w, assets/gallery/kitchen-03.avif 900w"><img src="assets/gallery/kitchen-03.webp" alt="Custom kitchen with marble waterfall island by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-03-480.webp 480w, assets/gallery/kitchen-03.webp 900w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="900" height="1600" decoding="async"></picture><figcaption>Marble waterfall island, full-height cabinetry.</figcaption></figure>
+      <figure class="work-item bracket"><picture><source type="image/avif" srcset="assets/gallery/kitchen-04-480.avif 480w, assets/gallery/kitchen-04.avif 900w"><img src="assets/gallery/kitchen-04.webp" alt="Custom white kitchen with pendant lighting by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-04-480.webp 480w, assets/gallery/kitchen-04.webp 900w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="900" height="900" decoding="async"></picture><figcaption>White kitchen with pendant lighting.</figcaption></figure>
+      <figure class="work-item bracket"><picture><source type="image/avif" srcset="assets/gallery/vanity-01-480.avif 480w, assets/gallery/vanity-01.avif 900w"><img src="assets/gallery/vanity-01.webp" alt="Custom wood-tone double bathroom vanity by Newood Millwork" loading="lazy" srcset="assets/gallery/vanity-01-480.webp 480w, assets/gallery/vanity-01.webp 900w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="900" height="1200" decoding="async"></picture><figcaption>Wood-tone double bathroom vanity.</figcaption></figure>
+      <figure class="work-item bracket"><picture><source type="image/avif" srcset="assets/gallery/vanity-02-480.avif 480w, assets/gallery/vanity-02.avif 900w"><img src="assets/gallery/vanity-02.webp" alt="Custom navy double bathroom vanity with brass hardware by Newood Millwork" loading="lazy" srcset="assets/gallery/vanity-02-480.webp 480w, assets/gallery/vanity-02.webp 900w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="900" height="1200" decoding="async"></picture><figcaption>Navy double vanity with brass hardware.</figcaption></figure>
+      <figure class="work-item bracket"><picture><source type="image/avif" srcset="assets/gallery/kitchen-09-480.avif 480w, assets/gallery/kitchen-09.avif 1000w"><img src="assets/gallery/kitchen-09.webp" alt="Custom navy kitchen cabinetry by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-09-480.webp 480w, assets/gallery/kitchen-09.webp 1000w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="1000" height="1333" decoding="async"></picture><figcaption>Navy kitchen cabinetry.</figcaption></figure>
+      <figure class="work-item bracket"><picture><source type="image/avif" srcset="assets/gallery/kitchen-10-480.avif 480w, assets/gallery/kitchen-10.avif 1000w"><img src="assets/gallery/kitchen-10.webp" alt="Custom dark wood kitchen by Newood Millwork" loading="lazy" srcset="assets/gallery/kitchen-10-480.webp 480w, assets/gallery/kitchen-10.webp 1000w" sizes="(max-width: 760px) 50vw, (max-width: 1228px) 33vw, 371px" width="1000" height="750" decoding="async"></picture><figcaption>Dark wood kitchen.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -168,7 +169,7 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="footer-mark"><img src="assets/brand/logo.webp" alt="Newood Millwork" class="footer-logo" width="180" height="101"></span>
+        <span class="footer-mark"><picture><source type="image/avif" srcset="assets/brand/logo.avif"><img src="assets/brand/logo.webp" alt="Newood Millwork" class="footer-logo" width="180" height="101"></picture></span>
         <p class="footer-tagline">Your one-stop shop. We are the solution.</p>
       </div>
       <nav class="footer-links" aria-label="Footer">
