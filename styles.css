@@ -1130,12 +1130,6 @@ textarea:focus-visible {
   font-size: var(--text-eyebrow);
   color: var(--on-dark-55);
 }
-.maple-icon {
-  width: 17px;
-  height: 17px;
-  flex: none;
-  vertical-align: -2px;
-}
 .footer-links {
   display: flex;
   flex-wrap: wrap;
