@@ -216,3 +216,28 @@ mainNav.querySelectorAll("a").forEach((link) => {
     }
   } catch (e) {}
 })();
+
+/* Anti-bot render token (Hub 0.65): fetch a signed timestamp from
+   the Hub and stamp it into every intake form on the page — the
+   quote form's AJAX payload picks the field up from FormData (it
+   does not start with "_"), the guide form carries it as a plain
+   hidden field. The Hub silently drops submissions that arrive
+   inhumanly fast or with a forged token. If the fetch fails the
+   form still submits; the Hub's other layers (rate limit,
+   duplicate suppression, content heuristics) still apply. */
+(function () {
+  var forms = document.querySelectorAll('form[action*="/api/intake/website/"]');
+  if (!forms.length) return;
+  var tok = forms[0].querySelector('[name="token"]');
+  var action = forms[0].getAttribute("action") || "";
+  if (!tok || !action) return;
+  var url = action.replace("website/", "challenge/")
+    + "?t=" + encodeURIComponent(tok.value);
+  fetch(url).then(function (r) { return r.json(); }).then(function (j) {
+    if (!j || !j.c) return;
+    forms.forEach(function (f) {
+      var inp = f.querySelector('[name="c"]');
+      if (inp) inp.value = j.c;
+    });
+  }).catch(function () {});
+})();
