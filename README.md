@@ -11,7 +11,7 @@ Site by [Yorkregionwebstudio.com](https://yorkregionwebstudio.com).
 - **Front-End:** HTML5, CSS3 (Flexbox/Grid), Modern Vanilla JavaScript (ES6+) — no framework, no CMS
 - **Hosting:** GitHub Pages (connected to custom domain via CNAME)
 - **Domain & DNS:** Squarespace DNS (pointed to GitHub Pages)
-- **Forms:** The homepage contact form posts to [FormSubmit](https://formsubmit.co) (`info@newoodmillwork.com`) — no server of our own required. A `mailto:` link is also shown as a fallback.
+- **Forms:** The homepage contact and guide forms post to our own Hub intake (`crm.newoodmillwork.com/api/intake/website/`). A `mailto:` link is also shown as a fallback.
 - **Free Kitchen Estimator:** hosted separately at [estimator.newoodmillwork.com](https://estimator.newoodmillwork.com), on its own subdomain/hosting with a small backend (`/api/calculate`, `/api/submit-lead`). Not part of this repo — cross-linked from the homepage and Kitchens page.
 
 ---
@@ -19,7 +19,7 @@ Site by [Yorkregionwebstudio.com](https://yorkregionwebstudio.com).
 ## 📂 Project Directory Structure
 
 ```text
-├── index.html          # Homepage (hero, 3 divisions, testimonials, contact)
+├── index.html          # Homepage (hero, 3 divisions, case study, estimator, FAQ, guide, contact)
 ├── closets.html        # Custom Closets & Storage service page
 ├── kitchens.html        # Custom Kitchens service page (kitchens + bathroom vanities)
 ├── commercial.html      # Custom Commercial Millwork service page
