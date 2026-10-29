@@ -1,7 +1,7 @@
 /* ==========================================================================
    Newood Millwork — script.js (SOURCE OF TRUTH)
    Edit this file, then rebuild:  npx terser script.js -o script.min.js --compress --mangle
-   Pages load script.min.js?v=ds6 — bump the ?v= on any script change.
+   Pages load script.min.js?v=ds11 — bump the ?v= on any script change.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -49,7 +49,7 @@ if (lightboxTriggers.length) {
   lightbox.innerHTML = `
     <button class="lightbox-close" aria-label="Close">&times;</button>
     <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
-    <img src="" alt="">
+    <img alt="">
     <button class="lightbox-next" aria-label="Next">&#8250;</button>
   `;
   document.body.appendChild(lightbox);
@@ -116,7 +116,7 @@ if (lightboxTriggers.length) {
 }
 
 /* --------------------------------------------------------------------------
-   Quote form — AJAX submit to FormSubmit (homepage only).
+   Quote form — AJAX submit to the Hub intake endpoint (homepage only).
    -------------------------------------------------------------------------- */
 const quoteForm = document.getElementById("quoteForm");
 const formStatus = document.getElementById("formStatus");

@@ -33,7 +33,7 @@
   --space-6: 32px;
   --space-7: 48px;
   --space-8: 64px;
-  --section-pad: clamp(64px, 9vw, 104px);
+  --section-pad: clamp(72px, 9vw, 112px);
   --card-pad: 32px;
   --max: 1180px; /* container; padding 0 24px */
 
@@ -357,8 +357,8 @@ textarea:focus-visible {
 }
 .nav-toggle {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: none;
   background: 0 0;
   cursor: pointer;
@@ -408,6 +408,8 @@ textarea:focus-visible {
   position: relative;
   z-index: 1;
   display: block;
+  flex: none;
+  white-space: nowrap;
   max-width: var(--max);
   margin: 24px auto 0;
   padding: 0 var(--space-5);
