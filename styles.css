@@ -359,8 +359,10 @@ textarea:focus-visible {
 .hero-breadcrumb {
   position: relative;
   z-index: 1;
-  display: inline-block;
-  margin: 24px 0 0 24px;
+  display: block;
+  max-width: var(--max);
+  margin: 24px auto 0;
+  padding: 0 var(--space-5);
   font-family: var(--mono);
   font-size: var(--text-eyebrow);
   color: var(--on-dark-72);
@@ -459,6 +461,7 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 0.42rem 0.2rem;
   border-bottom: 1px solid transparent;
   transition:
     border-color 0.2s var(--ease),
@@ -604,6 +607,10 @@ textarea:focus-visible {
 .cta-band h2 {
   color: var(--on-dark);
   margin-bottom: 22px;
+}
+.cta-band p {
+  color: var(--on-dark-82);
+  margin: 0 0 1.5rem;
 }
 .not-found h1 {
   color: var(--on-dark);
@@ -788,7 +795,6 @@ textarea:focus-visible {
 }
 .faq-item {
   border-bottom: 1px solid var(--line);
-  padding: 1.05rem 0;
 }
 .faq-item summary {
   font-family: var(--display);
@@ -796,9 +802,10 @@ textarea:focus-visible {
   font-size: var(--text-body);
   cursor: pointer;
   color: var(--ink);
+  padding: 1.05rem 0;
 }
 .faq-item p {
-  margin: 0.6rem 0 0;
+  margin: 0.6rem 0 1.05rem;
   color: var(--ink-soft);
   line-height: 1.65;
   max-width: 46rem;
@@ -888,7 +895,7 @@ textarea:focus-visible {
   color: var(--ink);
   padding: 12px 14px;
   font-family: var(--sans);
-  font-size: var(--text-button);
+  font-size: 1rem; /* 16px: under 16px iOS Safari auto-zooms on focus */
   resize: vertical;
 }
 .contact-card .form-field select {
@@ -1278,11 +1285,18 @@ textarea:focus-visible {
     gap: 0;
     padding: 12px 24px;
     transform: translateX(100%);
-    transition: transform var(--dur) var(--ease);
+    visibility: hidden;
+    transition:
+      transform var(--dur) var(--ease),
+      visibility 0s linear var(--dur);
     overflow-y: auto;
   }
   .main-nav.open {
     transform: translateX(0);
+    visibility: visible;
+    transition:
+      transform var(--dur) var(--ease),
+      visibility 0s;
   }
   .main-nav a {
     width: 100%;

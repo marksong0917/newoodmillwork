@@ -1,7 +1,7 @@
 /* ==========================================================================
    Newood Millwork — script.js (SOURCE OF TRUTH)
    Edit this file, then rebuild:  npx terser script.js -o script.min.js --compress --mangle
-   Pages load script.min.js?v=ds1 — bump the ?v= on any script change.
+   Pages load script.min.js?v=ds6 — bump the ?v= on any script change.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -39,6 +39,7 @@ const lightboxTriggers = document.querySelectorAll(".work-item img");
 if (lightboxTriggers.length) {
   const images = Array.from(lightboxTriggers);
   let current = 0;
+  let lastTrigger = null;
 
   const lightbox = document.createElement("div");
   lightbox.className = "lightbox";
@@ -61,7 +62,8 @@ if (lightboxTriggers.length) {
     lightboxImg.alt = images[current].alt;
   }
 
-  function open(index) {
+  function open(index, trigger) {
+    lastTrigger = trigger || null;
     show(index);
     lightbox.classList.add("open");
     const closeBtn = lightbox.querySelector(".lightbox-close");
@@ -70,11 +72,13 @@ if (lightboxTriggers.length) {
 
   function close() {
     lightbox.classList.remove("open");
+    if (lastTrigger) lastTrigger.focus();
   }
 
   images.forEach((img, index) => {
     if (img.closest("figure")) {
-      img.addEventListener("click", () => open(index));
+      img.tabIndex = -1; // focusable target for the lightbox focus return
+      img.addEventListener("click", () => open(index, img));
     }
   });
 

@@ -30,7 +30,7 @@
 <link rel="preload" as="image" href="assets/hero/hero-kitchen.avif" type="image/avif" fetchpriority="high">
 <link rel="preload" as="image" href="assets/hero/hero-kitchen.webp" type="image/webp" fetchpriority="high">
 <link rel="preload" as="image" href="assets/brand/logo.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.min.css?v=ds5">
+<link rel="stylesheet" href="styles.min.css?v=ds6">
 
 <script type="application/ld+json">
 {
@@ -314,11 +314,11 @@
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-field">
         <label for="gName">Your Name</label>
-        <input type="text" id="gName" name="name" placeholder="John Smith" required>
+        <input type="text" id="gName" name="name" placeholder="John Smith" autocomplete="name" required>
       </div>
       <div class="form-field">
         <label for="gEmail">Email Address</label>
-        <input type="email" id="gEmail" name="email" placeholder="john@example.com" required>
+        <input type="email" id="gEmail" name="email" placeholder="john@example.com" autocomplete="email" required>
       </div>
       <button type="submit" class="btn-primary">Send Me the Guide</button>
       <p class="form-note">We email the guide right away. Your details are only used to reply &mdash; never shared or added to a mailing list.</p>
@@ -354,11 +354,11 @@
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-field">
             <label for="qName">Your Name</label>
-            <input type="text" id="qName" name="name" placeholder="John Smith" required>
+            <input type="text" id="qName" name="name" placeholder="John Smith" autocomplete="name" required>
           </div>
           <div class="form-field">
             <label for="qEmail">Email Address</label>
-            <input type="email" id="qEmail" name="email" placeholder="john@example.com" required>
+            <input type="email" id="qEmail" name="email" placeholder="john@example.com" autocomplete="email" required>
           </div>
           <div class="form-field">
             <label for="qType">Project Type</label>
@@ -425,7 +425,7 @@
   <a href="index.html#contact" class="mobile-cta-quote">Request a Consultation</a>
 </div>
 
-<script src="script.min.js?v=ds5"></script>
+<script src="script.min.js?v=ds6"></script>
 <script>
 (function(){var t=new URLSearchParams(window.location.search).get('type');if(!t)return;var s=document.getElementById('qType');if(!s)return;for(var i=0;i<s.options.length;i++){if(s.options[i].value===t){s.selectedIndex=i;break;}}})();
 </script>
