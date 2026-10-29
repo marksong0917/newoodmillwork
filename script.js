@@ -147,7 +147,7 @@ if (quoteForm) {
     formStatus.hidden = true;
     try {
       const response = await fetch(
-        "https://crm.newoodmillwork.com/api/intake/website/",
+        "https://foxuma.com/api/intake/website/",
         {
           method: "POST",
           headers: {
