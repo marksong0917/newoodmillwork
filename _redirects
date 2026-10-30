@@ -1,0 +1,13 @@
+# Cloudflare Pages: keep the site's long-standing .html URLs serving 200
+# (Pages' default is a 308 to the extensionless path; our canonicals,
+# internal links, and sitemap all use .html, so rewrite instead).
+/accessibility.html /accessibility 200
+/closets.html /closets 200
+/commercial.html /commercial 200
+/disclaimer.html /disclaimer 200
+/kitchens.html /kitchens 200
+/page.html /page 200
+/privacy.html /privacy 200
+/terms.html /terms 200
+/warranty.html /warranty 200
+/why-us.html /why-us 200
