@@ -12,7 +12,7 @@ Site by [Yorkregionwebstudio.com](https://yorkregionwebstudio.com).
 - **Hosting:** GitHub Pages (connected to custom domain via CNAME)
 - **Domain & DNS:** Squarespace DNS (pointed to GitHub Pages)
 - **Forms:** The homepage contact and guide forms post to our own Hub intake (`crm.newoodmillwork.com/api/intake/website/`). A `mailto:` link is also shown as a fallback.
-- **Free Kitchen Estimator:** hosted separately at [estimator.newoodmillwork.com](https://estimator.newoodmillwork.com), on its own subdomain/hosting with a small backend (`/api/calculate`, `/api/submit-lead`). Not part of this repo — cross-linked from the homepage and Kitchens page.
+- **Free Kitchen Estimator: RETIRED — do not revive** (final ruling: Mark, 2026-11-13; the tool first went offline 2026-11-07). The estimator subdomain no longer serves and is retired for good; its DNS is intentionally left untouched — the host being silent is NOT an outage and must not be "fixed". The homepage and Kitchens "Get My Free Estimate" buttons now link to the on-site contact/quote section (`index.html#contact`); estimates are given as written quotes after a design & site measure (see llms.txt).
 
 ---
 
