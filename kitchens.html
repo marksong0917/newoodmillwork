@@ -27,9 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/hero/hero-kitchen.avif" type="image/avif" fetchpriority="high">
-<link rel="preload" as="image" href="assets/hero/hero-kitchen.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.min.css?v=ds14">
+<link rel="preload" as="image" type="image/avif" imagesrcset="assets/hero/hero-kitchen-640.avif 640w, assets/hero/hero-kitchen-1080.avif 1080w, assets/hero/hero-kitchen.avif 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="styles.min.css?v=ds15">
 
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://newoodmillwork.com/"}, {"@type": "ListItem", "position": 2, "name": "Custom Kitchen Cabinets", "item": "https://newoodmillwork.com/kitchens.html"}]}
@@ -83,8 +82,16 @@
   </div>
 </header>
 
-<section id="main-content" class="hero">
-  <div class="hero-media" style="background-image:image-set(url('assets/hero/hero-kitchen.avif') type('image/avif'), url('assets/hero/hero-kitchen.webp') type('image/webp'))"></div>
+<main id="main-content">
+
+<section class="hero">
+  <div class="hero-media">
+    <picture>
+      <source type="image/avif" srcset="assets/hero/hero-kitchen-640.avif 640w, assets/hero/hero-kitchen-1080.avif 1080w, assets/hero/hero-kitchen.avif 1600w" sizes="100vw">
+      <source type="image/webp" srcset="assets/hero/hero-kitchen-640.webp 640w, assets/hero/hero-kitchen-1080.webp 1080w, assets/hero/hero-kitchen.webp 1600w" sizes="100vw">
+      <img src="assets/hero/hero-kitchen.webp" alt="" width="1600" height="1200" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
   <div class="hero-scrim"></div>
   <a href="index.html" class="hero-breadcrumb">&larr; Back to home</a>
   <div class="wrap hero-inner">
@@ -106,9 +113,9 @@
 <section class="estimator-band reveal">
   <div class="wrap estimator-band-inner">
     <div>
-      <p class="eyebrow">FREE CLOSET ESTIMATOR</p>
+      <p class="eyebrow">FREE ESTIMATE</p>
       <h2>Want a ballpark number first?</h2>
-      <p>Try our free online closet estimator &mdash; an instant ballpark in under a minute, no contact info needed.</p>
+      <p>Tell us the rough size of the space and what you need, and we will give you a ballpark price for your project. It costs nothing, and there is no obligation.</p>
     </div>
     <a href="index.html#contact" class="btn-primary">Get My Free Estimate</a>
   </div>
@@ -172,6 +179,8 @@
     <a href="index.html?type=Kitchen#contact" class="btn-primary">Request a Consultation</a>
   </div>
 </section>
+
+</main>
 
 <footer class="site-footer">
   <div class="wrap">
